@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="cheekeePJ:war">
-    <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="cheekee.war">
-      <element id="artifact" artifact-name="cheekeePJ:war exploded" />
-    </root>
-  </artifact>
-</component>
