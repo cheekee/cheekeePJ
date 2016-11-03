@@ -16,6 +16,10 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-context:4.2.2.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:4.2.2.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-expression:4.2.2.RELEASE" />
+          <element id="library" level="project" name="Maven: kr.pe.kwonnam.freemarker:freemarker-template-inheritance:0.4.RELEASE" />
+          <element id="library" level="project" name="Maven: org.freemarker:freemarker:2.3.19" />
+          <element id="library" level="project" name="Maven: kr.pe.kwonnam.jsp:jsp-template-inheritance:0.3.RELEASE" />
+          <element id="library" level="project" name="Maven: javax.servlet:jstl:1.2" />
         </element>
       </element>
       <element id="directory" name="META-INF">
