@@ -29,6 +29,16 @@
                 </div>
                 <div>
                     RecentLab
+<!--
+                    <bean id="sqlSession" class="org.mybatis.spring.SqlSessionFactoryBean">
+                        <property name="dataSource" ref="dataSource" />
+                        <property name="mapperLocations" value="classpath:/mapper/*.xml" />
+                    </bean>
+
+                    <bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
+                        <constructor-arg index="0" ref="sqlSession"/>
+                    </bean>
+-->
                 </div>
             </div>
         </div>

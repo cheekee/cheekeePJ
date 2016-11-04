@@ -1,2 +1,5 @@
 ### java ###
-src/main/webapp/WEB-INF/spring/root-context.xml
+src/main/resources/config/spring/context-datasource.xml
+target/classes/config/spring/context-datasource.xml
+target/cheekee/WEB-INF/classes/config/spring/context-datasource.xml
+.gitignore.bak
