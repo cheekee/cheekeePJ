@@ -23,21 +23,21 @@
 
       <nav>
           <!-- Navigation -->
-          <div id="nav-main-logo"><a href="#">CHEEKEE's PLACE</a></div>
+          <div id="nav-main-logo"><a href="<c:url value="/" />">CHEEKEE's PLACE</a></div>
           <ul>
-              <li><a href="#">GEUSTBOOK</a></li>
-              <li><a href="#">LAB</a></li>
-              <li><a href="#">IDEA</a></li>
-              <li><a href="#">BLOG</a></li>
+              <li><a href="<c:url value="/geustbookList.do" />">GEUSTBOOK</a></li>
+              <li><a href="<c:url value="/labList.do" />">LAB</a></li>
+              <li><a href="<c:url value="/ideaList.do" />">IDEA</a></li>
+              <li><a href="<c:url value="/blogList.do" />">BLOG</a></li>
           </ul>
           <i id="menubar" class="fa fa-bars" aria-hidden="true"></i>
       </nav>
       <section>
           <ul id="side-menu">
-              <li><a href="#">GEUSTBOOK</a></li>
-              <li><a href="#">LAB</a></li>
-              <li><a href="#">IDEA</a></li>
-              <li><a href="#">BLOG</a></li>
+              <li><a href="<c:url value="/blogList.do" />">BLOG</a></li>
+              <li><a href="<c:url value="/ideaList.do" />">IDEA</a></li>
+              <li><a href="<c:url value="/labList.do" />">LAB</a></li>
+              <li><a href="<c:url value="/geustbookList.do" />">GEUSTBOOK</a></li>
           </ul>
           <!-- Introduction -->
           <div id="section-top">

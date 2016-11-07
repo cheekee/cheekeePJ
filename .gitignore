@@ -1,5 +1,6 @@
 ### java ###
-src/main/resources/config/spring/context-datasource.xml
-target/classes/config/spring/context-datasource.xml
-target/cheekee/WEB-INF/classes/config/spring/context-datasource.xml
+src/main/webapp/WEB-INF/spring/root-context.xml
+target/cheekee/WEB-INF/spring/root-context.xml
 .gitignore.bak
+.idea/compiler.xml
+.idea/workspace.xml

@@ -67,9 +67,9 @@ nav ul li a:hover {
 }
 #section-top-main {
     width: 100%;
-    background-image:url(/resources/image/main.PNG);
+    background-image:url(/resources/image/main.png);
     height: 250px;
-    opacity: 0.75;
+    opacity: 0.9;
     background-position: center;
     background-size: cover;
 }

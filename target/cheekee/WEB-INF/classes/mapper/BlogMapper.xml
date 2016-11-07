@@ -1,0 +1,10 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="BlogMapper">
+
+    <select id="selectBlogList"
+            parameterType="com.cheekee.blog.domain.BlogVO"
+            resultType="com.cheekee.blog.domain.BlogVO">
+        SELECT * FROM CHEEKEE.BLOG
+    </select>
+
+</mapper>
