@@ -1,4 +1,6 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumbrushscript.css);
 html, body {
+    font-family: 'Nanum Brush Script';
     height:100%;
     margin: 0;
     padding: 0;
@@ -8,37 +10,87 @@ body {
     position: relative;
 }
 nav {
-    background-color: #f8f8f8;
+    background-color: #26519e;
     top: 0;
     position: fixed;
     width: 100%;
+    z-index: 99
 }
+
+#nav-main-logo {
+    float: left;
+    padding: 0 10px;
+    line-height: 50px;
+    vertical-align: middle;
+    text-align: center;
+}
+
+#nav-main-logo a {
+    text-decoration:none;
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    color: #cfdcf4;
+}
+
 nav ul {
     margin: 0 0 0 0 ;
 }
 nav ul li {
     display:inline;
     float:right;
-    padding: 0 10px;
     line-height: 50px;
     vertical-align: middle;
     text-align: center;
 }
 nav ul li a {
+    padding: 0 10px;
     text-decoration:none;
     display: block;
-    font-size: 12px;
+    font-size: 17px;
     font-weight: bold;
+    color: #cfdcf4;
+}
+nav ul li a:hover {
+    background-color: #1c3c75;
+    color: white;
+}
+#menubar {
+    display: none;
+}
+#side-menu {
+    display: none;
 }
 #section-top {
     width: 100%;
     height: 250px;
 }
-#section-top-img {
-    margin-top: 50px;
+#section-top-main {
     width: 100%;
-    height: 200px;
+    background-image:url(/resources/image/main.PNG);
+    height: 250px;
+    opacity: 0.75;
+    background-position: center;
+    background-size: cover;
 }
+#section-top-main h1 {
+    height: 100px;
+    margin-bottom: 0px;
+    line-height: 250px;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 42px;
+    margin-top: 0px;
+    color: white;
+}
+#section-top-main h3 {
+    line-height: 100px;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 23px;
+    color: white;
+}
+
 #section-main {
     width: 90%;
     height: 650px;
@@ -55,5 +107,63 @@ footer {
     bottom: 0;
     width: 100%;
     height: 50px;
-    background-color: #f8f8f8;
+    background-color: #26519e;
+    padding: 0 10px;
+    text-decoration:none;
+    font-size: 18px;
+    color: #cfdcf4;
+    text-align: center;
+}
+
+footer a {
+    text-decoration:none;
+    font-size: 20px;
+    color: white;
+}
+
+
+@media only screen and (max-width: 560px) {
+    nav ul{
+        display: none;
+    }
+    #menubar {
+        display: inline;
+        color: #cfdcf4;
+        float: right;
+        padding: 15px;
+    }
+    #menubar:hover {
+        cursor: pointer;
+    }
+    #section-top-main h1 {
+        font-size: 25px;
+    }
+    #section-top-main h3 {
+        font-size: 20px;
+    }
+    #side-menu {
+        width: 100%;
+        margin-top: 50px;
+        position: fixed;
+        background-color: #26519e;
+        padding-left: 0px;
+        z-index: 98;
+    }
+    #side-menu li{
+        text-decoration:none;
+        display: block;
+        color: #cfdcf4;
+    }
+    #side-menu li a {
+        padding: 10px;
+        text-decoration: none;
+        display: block;
+        font-size: 17px;
+        font-weight: bold;
+        color: #cfdcf4;
+    }
+    #side-menu li a:hover {
+        background-color: #1c3c75;
+        color: white;
+    }
 }
