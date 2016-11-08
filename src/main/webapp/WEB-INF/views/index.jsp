@@ -37,10 +37,6 @@
                         <span>BLOG  |  2016-02-01</span>
                         <h4 class="mainh4">Jolokia 사용법 소개Jolokia 사용법 소개Jolokia 사용법 소개</h4>
                     </div>
-                    <div class="main-list-row">
-                        <span>BLOG  |  2016-02-01</span>
-                        <h4 class="mainh4">Jolokia 사용법 소개</h4>
-                    </div>
                 </div>
             </div>
             <div class="section-main-container">

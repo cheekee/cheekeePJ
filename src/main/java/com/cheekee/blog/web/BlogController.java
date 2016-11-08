@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 
@@ -21,11 +22,18 @@ public class BlogController {
 
     @RequestMapping(value="/blogList.do")
     public String blogList(Model model){
-
+/*
         BlogVO blogVO = new BlogVO();
         List<BlogVO> blogList = blogService.selectBlogList(blogVO);
-        model.addAttribute("blogList", blogList);
+        model.addAttribute("blogList", blogList);*/
         return "/blog/blogList";
+    }
+
+    @RequestMapping(value = "/ajaxBlogList.do")
+    @ResponseBody
+    public List<BlogVO> ajaxBlogList(){
+        List<BlogVO> blogList = blogService.selectBlogList(new BlogVO());
+        return blogList;
     }
 
 }

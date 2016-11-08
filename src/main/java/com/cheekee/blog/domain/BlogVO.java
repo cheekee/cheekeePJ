@@ -6,7 +6,11 @@ package com.cheekee.blog.domain;
 public class BlogVO {
 
     private String blogIdx;
+    private String blogCategory;
+    private String blogTitle;
     private String blogDesc;
+    private String blogDt;
+    private String blogRegister;
 
     public String getBlogIdx() {
         return blogIdx;
@@ -22,5 +26,37 @@ public class BlogVO {
 
     public void setBlogDesc(String blogDesc) {
         this.blogDesc = blogDesc;
+    }
+
+    public String getBlogCategory() {
+        return blogCategory;
+    }
+
+    public void setBlogCategory(String blogCategory) {
+        this.blogCategory = blogCategory;
+    }
+
+    public String getBlogTitle() {
+        return blogTitle;
+    }
+
+    public void setBlogTitle(String blogTitle) {
+        this.blogTitle = blogTitle;
+    }
+
+    public String getBlogDt() {
+        return blogDt;
+    }
+
+    public void setBlogDt(String blogDt) {
+        this.blogDt = blogDt;
+    }
+
+    public String getBlogRegister() {
+        return blogRegister;
+    }
+
+    public void setBlogRegister(String blogRegister) {
+        this.blogRegister = blogRegister;
     }
 }

@@ -6,10 +6,35 @@
 
         <section>
             <c:forEach items="${blogList}" var="blogList">
-                ${blogList.blogIdx} <br/>
-                ${blogList.blogDesc}<br/>
+                ${blogList.blogCategory} || ${blogList.blogTitle}
+                <br/>
             </c:forEach>
         </section>
 
+    </layout:put>
+    <layout:put block="scripts" type="REPLACE">
+    <script type="text/javascript">
+
+        $(document).ready(function(){
+
+                $.ajax({
+                    url : "<c:url value='/ajaxBlogList.do'/>",
+                    type : 'get', // get, post
+                    data : {
+                    }, // form을 통채로 넘길때, {'name':'홍길동', 'age':'20'}
+                    dataType : 'json', //text, json, html, xml, script
+                    success : function(data) {
+                        $(data).each(function(index, item) {
+                            console.log(item.blogIdx);
+                        })
+                    },
+                    error : function() {
+                        alert("실패");
+                    }
+                });
+
+        });
+
+    </script>
     </layout:put>
 </layout:extends>

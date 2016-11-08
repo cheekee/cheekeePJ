@@ -1,7 +1,6 @@
 ### java ###
 src/main/webapp/WEB-INF/spring/root-context.xml
 target
-.gitignore.bak
 .idea/compiler.xml
 .idea/workspace.xml
 *.bak
