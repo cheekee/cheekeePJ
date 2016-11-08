@@ -132,6 +132,11 @@ nav ul li a:hover {
     margin-top: 0px;
     margin-bottom: 0px;
 }
+
+.section-content-item {
+    height: 200px;
+}
+
 footer {
     clear: both;
     position: fixed;

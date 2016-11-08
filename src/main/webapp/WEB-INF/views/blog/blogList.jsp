@@ -5,10 +5,9 @@
     <layout:put block="contents" type="REPLACE">
 
         <section>
-            <c:forEach items="${blogList}" var="blogList">
-                ${blogList.blogCategory} || ${blogList.blogTitle}
-                <br/>
-            </c:forEach>
+            <div id="section-content-wrap">
+
+            </div>
         </section>
 
     </layout:put>
@@ -16,22 +15,30 @@
     <script type="text/javascript">
 
         $(document).ready(function(){
+            $(document).scroll(function() {
+                var maxHeight = $(document).height();
+                var currentScroll = $(window).scrollTop() + $(window).height();
 
-                $.ajax({
-                    url : "<c:url value='/ajaxBlogList.do'/>",
-                    type : 'get', // get, post
-                    data : {
-                    }, // form을 통채로 넘길때, {'name':'홍길동', 'age':'20'}
-                    dataType : 'json', //text, json, html, xml, script
-                    success : function(data) {
-                        $(data).each(function(index, item) {
-                            console.log(item.blogIdx);
-                        })
-                    },
-                    error : function() {
-                        alert("실패");
-                    }
-                });
+                if (maxHeight <= currentScroll + 100) {
+                    $.ajax({
+                        url : "<c:url value='/ajaxBlogList.do'/>",
+                        type : 'get', // get, post
+                        data : {
+                        }, // form을 통채로 넘길때, {'name':'홍길동', 'age':'20'}
+                        dataType : 'json', //text, json, html, xml, script
+                        success : function(data) {
+                            $(data).each(function(index, item) {
+                                var html = "<div class='section-content-item'>"+item.blogCategory+"</div>"
+                                $('#section-content-wrap').append(html);
+                            })
+                        },
+                        error : function() {
+                            alert("실패");
+                        }
+                    });
+                }
+            })
+
 
         });
 
