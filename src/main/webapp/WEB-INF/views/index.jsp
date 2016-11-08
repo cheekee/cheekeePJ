@@ -8,27 +8,48 @@
         <!-- Main content area -->
         <div id="section-main">
             <div class="section-main-container">
-                <div class="">
+                <div class="main-list-top">
                     BlogImage
                 </div>
-                <div>
-                    RecentBlog
+                <div class="main-list-wrap">
+                    <div class="main-list-row">
+                        <span>BLOG  |  2016-02-01</span>
+                        <h4 class="mainh4">Jolokia 사용법 소개Jolokia 사용법 소개Jolokia 사용법 소개</h4>
+                    </div>
+                    <div class="main-list-row">
+                        <span>BLOG  |  2016-02-01</span>
+                        <h4 class="mainh4">Jolokia 사용법 소개</h4>
+                    </div>
                 </div>
             </div>
             <div class="section-main-container">
-                <div>
+                <div class="main-list-top">
                     IdeaImage
                 </div>
-                <div>
-                    RecentIdea
+                <div class="main-list-wrap">
+                    <div class="main-list-row">
+                        <span>IDEA  |  2016-02-01</span>
+                        <h4 class="mainh4">개발 일지</h4>
+                    </div>
+                    <div class="main-list-row">
+                        <span>IDEA  |  2016-02-01</span>
+                        <h4 class="mainh4">최순실게이트</h4>
+                    </div>
                 </div>
             </div>
             <div class="section-main-container">
-                <div>
+                <div class="main-list-top">
                     LabImage
                 </div>
-                <div>
-                    RecentLab
+                <div class="main-list-wrap">
+                    <div class="main-list-row">
+                        <span>LAB  |  2016-02-01</span>
+                        <h4 class="mainh4">socket.io chatting test</h4>
+                    </div>
+                    <div class="main-list-row">
+                        <span>LAB  |  2016-02-01</span>
+                        <h4 class="mainh4">bastball-game</h4>
+                    </div>
                 </div>
             </div>
         </div>
