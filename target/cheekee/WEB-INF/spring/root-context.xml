@@ -5,9 +5,9 @@
 
 	<bean id="dataSourceMySQL" class="org.apache.commons.dbcp.BasicDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
-		<property name="url" value="jdbc:mysql://Host-Address:3306/cheekee"/>
+		<property name="url" value="jdbc:mysql://localhost:3306/cheekee"/>
 		<property name="username" value="aepet"/>
-		<property name="password" value="00"/>
+		<property name="password" value="aepet6"/>
 	</bean>
 
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">

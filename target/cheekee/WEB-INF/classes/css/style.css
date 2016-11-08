@@ -90,31 +90,36 @@ nav ul li a:hover {
     font-size: 23px;
     color: white;
 }
-
+#section-main-wrap {
+    padding: 0 auto;
+}
 #section-main {
     width: 90%;
     height: 650px;
     margin:0 auto;
+    margin-top: 30px;
 }
 .section-main-container {
     float: left;
-    width: 28%;
+    width: 30%;
     height: 600px;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-right: 5%;
+}
+.section-main-container:last-child {
+    margin-right: 0;
 }
 .main-list-top {
     padding: 10px;
     margin-bottom: 10px;
     text-align: center;
-    background-color: #26519e;
-    font-size: 25px;
+    background-color: #597dbd;
+    font-size: 30px;
+    color: white;
 }
 .main-list-top:hover {
-    cursor: pointer;
 }
 .main-list-row {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     padding: 10px;
     margin-bottom: 10px;
 }

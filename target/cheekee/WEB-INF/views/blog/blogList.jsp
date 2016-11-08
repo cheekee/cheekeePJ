@@ -5,7 +5,10 @@
     <layout:put block="contents" type="REPLACE">
 
         <section>
-blogList
+            <c:forEach items="${blogList}" var="blogList">
+                ${blogList.blogIdx} <br/>
+                ${blogList.blogDesc}<br/>
+            </c:forEach>
         </section>
 
     </layout:put>
