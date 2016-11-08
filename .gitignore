@@ -4,3 +4,4 @@ target/cheekee/WEB-INF/spring/root-context.xml
 .gitignore.bak
 .idea/compiler.xml
 .idea/workspace.xml
+*.bak
