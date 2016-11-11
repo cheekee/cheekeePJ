@@ -11,7 +11,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HomeController {
 
     @RequestMapping(value = "/")
-    public String home(Model model) {
+    public String home() {
+
+        return "/index";
+    }
+
+    @RequestMapping(value = "/admin")
+    public String loginForm() {
+
+        return "/admin/loginForm";
+    }
+
+    @RequestMapping(value = "/login.do")
+    public String login() {
 
         return "/index";
     }
