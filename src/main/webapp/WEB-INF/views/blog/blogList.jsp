@@ -6,7 +6,11 @@
 
         <section>
             <div id="section-content-tag">
-                tag자리
+                tag자리<br>
+                java
+                spring
+                git
+                etc..
             </div>
             <div id="section-content-wrap">
 
@@ -49,7 +53,7 @@
                 dataType : 'json', //text, json, html, xml, script
                 success : function(data) {
                     $(data).each(function(index, item) {
-                        var html = "<div class='section-content-item'>"+item.blogCategory+"<a href='<c:url value="/blogRetrieve.do?blogIdx?blogIdx=" />'>"+item.blogTitle+"</a></div>"
+                        var html = "<div class='section-content-item'>"+item.blogDt+" | "+item.blogCategory+"<a class='blog-item-title' href='<c:url value="/blogRetrieve.do?blogIdx?blogIdx=" />'>"+item.blogTitle+"</a></div>"
                         $('#section-content-wrap').append(html);
                         blogCount = item.blogCount;
                     });
