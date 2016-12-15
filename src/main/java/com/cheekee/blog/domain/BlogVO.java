@@ -11,6 +11,33 @@ public class BlogVO {
     private String blogDesc;
     private String blogDt;
     private String blogRegister;
+    private String blogCount;
+    private int pageNumber;
+    private int pageEndNumber;
+
+    public int getPageEndNumber() {
+        return pageEndNumber;
+    }
+
+    public void setPageEndNumber(int pageEndNumber) {
+        this.pageEndNumber = pageEndNumber;
+    }
+
+    public String getBlogCount() {
+        return blogCount;
+    }
+
+    public void setBlogCount(String blogCount) {
+        this.blogCount = blogCount;
+    }
+
+    public int getPageNumber() {
+        return pageNumber;
+    }
+
+    public void setPageNumber(int pageNumber) {
+        this.pageNumber = pageNumber;
+    }
 
     public String getBlogIdx() {
         return blogIdx;
