@@ -21,4 +21,9 @@ public class BlogDAOImpl implements BlogDAO{
         return sqlSession.selectList("BlogMapper.selectBlogList", blogVO);
     }
 
+    @Override
+    public List<String> selectBlogCategoryList(){
+        return sqlSession.selectList("BlogMapper.selectBlogCategoryList");
+    }
+
 }

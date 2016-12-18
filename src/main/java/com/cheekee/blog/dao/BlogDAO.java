@@ -10,5 +10,6 @@ import java.util.List;
 public interface BlogDAO {
 
     List<BlogVO> selectBlogList(BlogVO blogVO);
+    List<String> selectBlogCategoryList();
 
 }

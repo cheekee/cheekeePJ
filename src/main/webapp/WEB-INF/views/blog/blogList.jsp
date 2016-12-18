@@ -5,12 +5,10 @@
     <layout:put block="contents" type="REPLACE">
 
         <section>
-            <div id="section-content-tag">
-                tag자리<br>
-                java
-                spring
-                git
-                etc..
+            <div class="blog-category-wrap">
+                <c:forEach items="${blogCategoryList}" var="blogCategoryList">
+                    <div class="blog-category">${blogCategoryList}</div>
+                </c:forEach>
             </div>
             <div id="section-content-wrap">
 

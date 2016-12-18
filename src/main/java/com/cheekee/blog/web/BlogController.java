@@ -23,9 +23,10 @@ public class BlogController {
 
     @RequestMapping(value="/blogList.do")
     public String blogList(Model model){
-        BlogVO blogVO = new BlogVO();
-        List<BlogVO> blogList = blogService.selectBlogList(blogVO);
-        model.addAttribute("blogList", blogList);
+
+        List<String> blogCategoryList = blogService.selectBlogCategoryList();
+        // 블로그 카테고리 태그 리스트
+        model.addAttribute("blogCategoryList", blogCategoryList);
         return "/blog/blogList";
     }
 

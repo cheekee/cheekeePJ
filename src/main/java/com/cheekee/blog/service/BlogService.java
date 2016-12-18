@@ -11,5 +11,6 @@ import java.util.List;
 public interface BlogService {
 
     List<BlogVO> selectBlogList(BlogVO blogVO);
+    List<String> selectBlogCategoryList();
 
 }

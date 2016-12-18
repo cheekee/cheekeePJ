@@ -7,4 +7,11 @@
         SELECT (SELECT COUNT(*) FROM CHEEKEE.BLOG) AS BLOG_COUNT, BLOG_DT, BLOG_TITLE, BLOG_CATEGORY, BLOG_IDX FROM CHEEKEE.BLOG ORDER BY BLOG_DT desc LIMIT ${pageNumber}, ${pageEndNumber}
     </select>
 
+    <select id="selectBlogCategoryList"
+            resultType="java.lang.String">
+        SELECT distinct BLOG_CATEGORY FROM CHEEKEE.BLOG
+    </select>
+
+
+
 </mapper>
