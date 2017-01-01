@@ -33,10 +33,14 @@ public class BlogController {
     // 블로그 리스트 ajax
     @RequestMapping(value = "/ajaxBlogList.do")
     @ResponseBody
-    public List<BlogVO> ajaxBlogList(@RequestParam("pageNumber") String pageNumber, @RequestParam("pageEndNumber") String pageEndNumber){
+    public List<BlogVO> ajaxBlogList(@RequestParam("pageNumber") String pageNumber, @RequestParam("pageEndNumber") String pageEndNumber,
+                                     @RequestParam(value="searchCategory",required=false) String searchCategory){
         BlogVO blogVO = new BlogVO();
         int pageNumber1 = Integer.parseInt(pageNumber);
         int pageEndNumber1 = Integer.parseInt(pageEndNumber);
+        if(searchCategory != ""){
+            blogVO.setSearchCategory(searchCategory);
+        }
         blogVO.setPageNumber(pageNumber1);
         blogVO.setPageEndNumber(pageEndNumber1);
         List<BlogVO> blogList = blogService.selectBlogList(blogVO);

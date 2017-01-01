@@ -4,7 +4,15 @@
     <select id="selectBlogList"
             parameterType="com.cheekee.blog.domain.BlogVO"
             resultType="com.cheekee.blog.domain.BlogVO">
-        SELECT (SELECT COUNT(*) FROM CHEEKEE.BLOG) AS BLOG_COUNT, BLOG_DT, BLOG_TITLE, BLOG_CATEGORY, BLOG_IDX FROM CHEEKEE.BLOG ORDER BY BLOG_DT desc LIMIT ${pageNumber}, ${pageEndNumber}
+        SELECT (SELECT COUNT(*) FROM CHEEKEE.BLOG
+        <if test="searchCategory != null">
+            WHERE BLOG_CATEGORY = '${searchCategory}'
+        </if>
+        ) AS BLOG_COUNT, BLOG_DT, BLOG_TITLE, BLOG_CATEGORY, BLOG_IDX FROM CHEEKEE.BLOG
+        <if test="searchCategory != null">
+          WHERE BLOG_CATEGORY = '${searchCategory}'
+        </if>
+        ORDER BY BLOG_DT desc LIMIT ${pageNumber}, ${pageEndNumber}
     </select>
 
     <select id="selectBlogCategoryList"

@@ -14,6 +14,15 @@ public class BlogVO {
     private String blogCount;
     private int pageNumber;
     private int pageEndNumber;
+    private String searchCategory;
+
+    public String getSearchCategory() {
+        return searchCategory;
+    }
+
+    public void setSearchCategory(String searchCategory) {
+        this.searchCategory = searchCategory;
+    }
 
     public int getPageEndNumber() {
         return pageEndNumber;
