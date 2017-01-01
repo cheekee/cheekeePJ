@@ -20,6 +20,12 @@
         SELECT distinct BLOG_CATEGORY FROM CHEEKEE.BLOG
     </select>
 
+    <select id="selectBlogRetrieve"
+            parameterType="java.lang.String"
+            resultType="com.cheekee.blog.domain.BlogVO">
+        SELECT * FROM CHEEKEE.BLOG WHERE BLOG_IDX = #{value};
+    </select>
+
 
 
 </mapper>

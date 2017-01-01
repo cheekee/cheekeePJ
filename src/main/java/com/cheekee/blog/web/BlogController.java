@@ -23,7 +23,6 @@ public class BlogController {
 
     @RequestMapping(value="/blogList.do")
     public String blogList(Model model){
-
         List<String> blogCategoryList = blogService.selectBlogCategoryList();
         // 블로그 카테고리 태그 리스트
         model.addAttribute("blogCategoryList", blogCategoryList);
@@ -50,8 +49,9 @@ public class BlogController {
 
     // 블로그 상세 조회 - 수정해야함
     @RequestMapping(value="/blogRetrieve.do")
-    public String blogRetrieve(){
-
+    public String blogRetrieve(@RequestParam("searchBlogIdx") String searchBlogIdx, Model model){
+        BlogVO blogResult = blogService.selectBlogRetrieve(searchBlogIdx);
+        model.addAttribute("blogResult", blogResult);
         return "/blog/blogRetrieve";
     }
 

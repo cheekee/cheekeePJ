@@ -11,5 +11,5 @@ public interface BlogDAO {
 
     List<BlogVO> selectBlogList(BlogVO blogVO);
     List<String> selectBlogCategoryList();
-
+    BlogVO selectBlogRetrieve(String searchBlogIdx);
 }

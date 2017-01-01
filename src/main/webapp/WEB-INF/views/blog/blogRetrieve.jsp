@@ -6,6 +6,7 @@
 
         <section>
             블로그 글보기
+            <c:out value="${blogResult.blogIdx}"/>
         </section>
 
     </layout:put>

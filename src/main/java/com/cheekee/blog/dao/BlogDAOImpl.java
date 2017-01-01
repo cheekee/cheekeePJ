@@ -26,4 +26,9 @@ public class BlogDAOImpl implements BlogDAO{
         return sqlSession.selectList("BlogMapper.selectBlogCategoryList");
     }
 
+    @Override
+    public BlogVO selectBlogRetrieve(String searchBlogIdx){
+        return sqlSession.selectOne("BlogMapper.selectBlogRetrieve", searchBlogIdx);
+    }
+
 }

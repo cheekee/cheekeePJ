@@ -12,5 +12,5 @@ public interface BlogService {
 
     List<BlogVO> selectBlogList(BlogVO blogVO);
     List<String> selectBlogCategoryList();
-
+    BlogVO selectBlogRetrieve(String searchBlogIdx);
 }

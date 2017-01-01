@@ -46,9 +46,10 @@
                 ajaxSearchBlogList(searchCategory);
             });
 
-            // 이거는 동적html 생성된것이다 그래서 on 문법 그 클릭되는 아이디 이름인가 넣어야함
-            $('.section-content-item').on("click", function(){
-
+            // 블로그 상세보기 클릭
+            $(document).on("click", ".section-content-item", function(){
+                var searchBlogIdx = $(this).children("input").val();
+                blogRetrieve(searchBlogIdx);
             });
 
         });
@@ -72,7 +73,7 @@
                 dataType : 'json', //text, json, html, xml, script
                 success : function(data) {
                     $(data).each(function(index, item) {
-                        var html = "<div class='section-content-item'>"+item.blogDt+" | "+item.blogCategory+"<br><span class='blog-item-title'>"+item.blogTitle+"</span></div>"
+                        var html = "<div class='section-content-item'>"+item.blogDt+" | "+item.blogCategory+"<br><span class='blog-item-title'>"+item.blogTitle+"</span><input type='hidden' value="+item.blogIdx+"></div>"
                         $('#section-content-wrap').append(html);
                         blogCount = item.blogCount;
                     });
@@ -103,6 +104,12 @@
                 }
             });
         };
+
+        // 블로그 상세조회
+        function blogRetrieve(searchBlogIdx){
+            var searchBlogIdx = searchBlogIdx;
+            location.href="<c:url value='/blogRetrieve.do?searchBlogIdx="+searchBlogIdx+"'/>"
+        }
 
     </script>
     </layout:put>
