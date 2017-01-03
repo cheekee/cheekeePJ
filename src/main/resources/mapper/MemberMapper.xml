@@ -1,0 +1,10 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="MemberMapper">
+
+    <select id="loginCheck"
+            parameterType="com.cheekee.member.domain.MemberVO"
+            resultType="com.cheekee.member.domain.MemberVO">
+        SELECT * FROM CHEEKEE.MEMBER WHERE MEMBER_ID = '${memberId}' AND MEMBER_PW = '${memberPw}'
+    </select>
+
+</mapper>

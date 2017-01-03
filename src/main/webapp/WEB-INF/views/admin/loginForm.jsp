@@ -62,7 +62,7 @@
 
         <section>
 
-            <form>
+            <form id="loginForm" action="/login.do">
                 <div class="imgcontainer">
                     <img src="/resources/image/login.png" alt="Avatar" class="avatar">
                 </div>
@@ -70,11 +70,11 @@
                 <div class="container">
                     <div>
                     <label><b>Username</b></label>
-                    <input type="text" placeholder="Enter User Id" name="memberId" required>
+                    <input type="text" placeholder="Enter User Id" name="memberId" id="memberId" required>
                     </div>
                     <div>
                     <label><b>Password</b></label>
-                    <input type="password" placeholder="Enter User Password" name="memberPw" required>
+                    <input type="password" placeholder="Enter User Password" name="memberPw" id="memberPw" required>
                     </div>
                     <div>
                     <button id="loginBtn" type="button">Login</button>
@@ -91,8 +91,7 @@
 
             $(document).ready(function(){
                 $('#loginBtn').click(function(){
-                    // ajax로 체크 후 관리자만 로그인 후 홈으로 login.do
-                    // 실패하면 화면 유지  , 경고창만
+                    $('#loginForm').submit();
                 });
             });
 
