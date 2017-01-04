@@ -29,6 +29,12 @@
               <li><a href="<c:url value="/labList.do" />">LAB</a></li>
               <li><a href="<c:url value="/ideaList.do" />">IDEA</a></li>
               <li><a href="<c:url value="/blogList.do" />">BLOG</a></li>
+              <c:choose>
+                  <c:when test="${not empty sessionScope.loginMember}">
+                      <li><a href="<c:url value="/logout.do" />">LOGOUT</a></li>
+                      <li><a href="<c:url value="/blogList.do" />">WRITE</a></li>
+                  </c:when>
+              </c:choose>
           </ul>
           <i id="menubar" class="fa fa-bars" aria-hidden="true"></i>
       </nav>

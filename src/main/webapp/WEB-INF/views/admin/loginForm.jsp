@@ -62,7 +62,7 @@
 
         <section>
 
-            <form id="loginForm" action="/login.do">
+            <form id="loginForm" action="/login.do" method="post">
                 <div class="imgcontainer">
                     <img src="/resources/image/login.png" alt="Avatar" class="avatar">
                 </div>
