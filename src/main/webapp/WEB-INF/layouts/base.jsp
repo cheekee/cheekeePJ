@@ -31,8 +31,9 @@
               <li><a href="<c:url value="/blogList.do" />">BLOG</a></li>
               <c:choose>
                   <c:when test="${not empty sessionScope.loginMember}">
+                      <li><a href="<c:url value="/writeForm.do" />">WRITE</a></li>
+                      <li><a href="<c:url value="/adminHome.do" />">ADMIN</a></li>
                       <li><a href="<c:url value="/logout.do" />">LOGOUT</a></li>
-                      <li><a href="<c:url value="/blogList.do" />">WRITE</a></li>
                   </c:when>
               </c:choose>
           </ul>
@@ -44,6 +45,13 @@
               <li><a href="<c:url value="/ideaList.do" />">IDEA</a></li>
               <li><a href="<c:url value="/labList.do" />">LAB</a></li>
               <li><a href="<c:url value="/geustbookList.do" />">GEUSTBOOK</a></li>
+              <c:choose>
+                  <c:when test="${not empty sessionScope.loginMember}">
+                      <li><a href="<c:url value="/writeForm.do" />">WRITE</a></li>
+                      <li><a href="<c:url value="/adminHome.do" />">ADMIN</a></li>
+                      <li><a href="<c:url value="/logout.do" />">LOGOUT</a></li>
+                  </c:when>
+              </c:choose>
           </ul>
           <!-- Introduction -->
           <div id="section-top">

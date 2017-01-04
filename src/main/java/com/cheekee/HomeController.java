@@ -51,4 +51,21 @@ public class HomeController {
         return "/index";
     }
 
+    @RequestMapping(value = "/writeForm.do")
+    public String writeFrom() {
+
+        return "/admin/writeForm";
+    }
+
+    @RequestMapping(value = "/adminHome.do")
+    public String adminHome() {
+
+        return "/admin/adminHome";
+    }
+
+    //
+    //
+    //
+    // url에 /writeForm.do 치고 들어오면 들어가짐............ 세션정보 없으면 팅겨내야함
+
 }
