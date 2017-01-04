@@ -84,18 +84,8 @@ public class HomeController {
         if(loginMember == null){
             return "/index";
         }
-        if(blogVO.getDivision().equals("blog")){
-            // blog에 입력
-            int resultCnt = blogService.insertBlog(blogVO);
-
-
-
-        }else if(blogVO.getDivision().equals("idea")){
-            // idea에 입력
-
-
-
-        }
+        // blog, idea 입력
+        int resultCnt = blogService.insertPost(blogVO);
 
         return "/index";
     }

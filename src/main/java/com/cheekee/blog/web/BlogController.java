@@ -22,10 +22,11 @@ public class BlogController {
     private BlogService blogService;
 
     @RequestMapping(value="/blogList.do")
-    public String blogList(Model model){
-        List<String> blogCategoryList = blogService.selectBlogCategoryList();
-        // 블로그 카테고리 태그 리스트
-        model.addAttribute("blogCategoryList", blogCategoryList);
+    public String blogList(Model model, @RequestParam("division") String division){
+        List<String> blogCategoryList = blogService.selectBlogCategoryList(division);
+            // 카테고리 태그 리스트
+            model.addAttribute("blogCategoryList", blogCategoryList);
+            model.addAttribute("division", division);
         return "/blog/blogList";
     }
 
@@ -33,6 +34,7 @@ public class BlogController {
     @RequestMapping(value = "/ajaxBlogList.do")
     @ResponseBody
     public List<BlogVO> ajaxBlogList(@RequestParam("pageNumber") String pageNumber, @RequestParam("pageEndNumber") String pageEndNumber,
+                                     @RequestParam("division") String division,
                                      @RequestParam(value="searchCategory",required=false) String searchCategory){
         BlogVO blogVO = new BlogVO();
         int pageNumber1 = Integer.parseInt(pageNumber);
@@ -42,6 +44,8 @@ public class BlogController {
         }
         blogVO.setPageNumber(pageNumber1);
         blogVO.setPageEndNumber(pageEndNumber1);
+        blogVO.setDivision(division);
+        System.out.println(division+"DDDDD");
         List<BlogVO> blogList = blogService.selectBlogList(blogVO);
 
         return blogList;

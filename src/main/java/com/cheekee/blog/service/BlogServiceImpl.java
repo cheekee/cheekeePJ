@@ -23,8 +23,8 @@ public class BlogServiceImpl implements BlogService {
     }
 
     @Override
-    public List<String> selectBlogCategoryList(){
-        return blogDAO.selectBlogCategoryList();
+    public List<String> selectBlogCategoryList(String division){
+        return blogDAO.selectBlogCategoryList(division);
     }
     @Override
     public BlogVO selectBlogRetrieve(String searchBlogIdx){
@@ -32,8 +32,15 @@ public class BlogServiceImpl implements BlogService {
     }
 
     @Override
-    public int insertBlog(BlogVO blogVO){
-        return blogDAO.insertBlog(blogVO);
+    public int insertPost(BlogVO blogVO){
+        if (blogVO.getDivision().equals("blog")){
+            // blog 글 입력
+            return blogDAO.insertBlog(blogVO);
+        }else if(blogVO.getDivision().equals("idea")){
+            // idea 글 입력
+            return blogDAO.insertIdea(blogVO);
+        }
+        return 0;
     }
 
 }

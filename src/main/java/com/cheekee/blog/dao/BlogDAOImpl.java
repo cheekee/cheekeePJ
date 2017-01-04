@@ -5,7 +5,9 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by songhangyu on 2016-11-08.
@@ -22,8 +24,10 @@ public class BlogDAOImpl implements BlogDAO{
     }
 
     @Override
-    public List<String> selectBlogCategoryList(){
-        return sqlSession.selectList("BlogMapper.selectBlogCategoryList");
+    public List<String> selectBlogCategoryList(String division){
+        BlogVO blogVO = new BlogVO();
+        blogVO.setDivision(division);
+        return sqlSession.selectList("BlogMapper.selectBlogCategoryList", blogVO);
     }
 
     @Override
@@ -34,6 +38,11 @@ public class BlogDAOImpl implements BlogDAO{
     @Override
     public int insertBlog(BlogVO blogVO){
         return sqlSession.insert("BlogMapper.insertBlog", blogVO);
+    }
+
+    @Override
+    public int insertIdea(BlogVO blogVO){
+        return sqlSession.insert("BlogMapper.insertIdea", blogVO);
     }
 
 }

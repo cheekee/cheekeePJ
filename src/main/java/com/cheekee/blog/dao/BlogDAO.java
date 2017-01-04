@@ -10,7 +10,8 @@ import java.util.List;
 public interface BlogDAO {
 
     List<BlogVO> selectBlogList(BlogVO blogVO);
-    List<String> selectBlogCategoryList();
+    List<String> selectBlogCategoryList(String division);
     BlogVO selectBlogRetrieve(String searchBlogIdx);
     int insertBlog(BlogVO blogVO);
+    int insertIdea(BlogVO blogVO);
 }

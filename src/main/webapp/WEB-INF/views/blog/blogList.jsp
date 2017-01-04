@@ -16,6 +16,7 @@
             <div id="section-content-wrap">
 
             </div>
+            <input type="hidden" id="division" value="${division}">
         </section>
 
     </layout:put>
@@ -63,13 +64,15 @@
         var blogCount = 0;
         // 블로그 검색 키워드
         var searchCategory = null;
+        // division : 블로그, 아이디어 구분
+        var division = $('#division').val();
 
         // 블로그 리스트 불러오기
         function ajaxBlogList(){
             $.ajax({
                 url : "<c:url value='/ajaxBlogList.do'/>",
                 type : 'get', // get, post
-                data : {"pageNumber":pageNumber, "pageEndNumber":pageEndNumber}, // form을 통채로 넘길때, {'name':'홍길동', 'age':'20'}
+                data : {"pageNumber":pageNumber, "pageEndNumber":pageEndNumber, "division":division}, // form을 통채로 넘길때, {'name':'홍길동', 'age':'20'}
                 dataType : 'json', //text, json, html, xml, script
                 success : function(data) {
                     $(data).each(function(index, item) {
@@ -90,7 +93,7 @@
             $.ajax({
                 url : "<c:url value='/ajaxBlogList.do'/>",
                 type : 'get', // get, post
-                data : {"pageNumber":pageNumber, "pageEndNumber":pageEndNumber, "searchCategory":searchCategory}, // form을 통채로 넘길때, {'name':'홍길동', 'age':'20'}
+                data : {"pageNumber":pageNumber, "pageEndNumber":pageEndNumber, "searchCategory":searchCategory, "division":division}, // form을 통채로 넘길때, {'name':'홍길동', 'age':'20'}
                 dataType : 'json', //text, json, html, xml, script
                 success : function(data) {
                     $(data).each(function(index, item) {
