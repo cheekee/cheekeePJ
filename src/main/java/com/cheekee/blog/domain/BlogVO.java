@@ -5,6 +5,7 @@ package com.cheekee.blog.domain;
  */
 public class BlogVO {
 
+    private String division;
     private String blogIdx;
     private String blogCategory;
     private String blogTitle;
@@ -15,6 +16,14 @@ public class BlogVO {
     private int pageNumber;
     private int pageEndNumber;
     private String searchCategory;
+
+    public String getDivision() {
+        return division;
+    }
+
+    public void setDivision(String division) {
+        this.division = division;
+    }
 
     public String getSearchCategory() {
         return searchCategory;

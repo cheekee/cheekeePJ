@@ -26,6 +26,12 @@
         SELECT * FROM CHEEKEE.BLOG WHERE BLOG_IDX = #{value};
     </select>
 
+    <select id="insertBlog"
+            parameterType="com.cheekee.blog.domain.BlogVO"
+            resultType="Integer">
+        INSERT INTO CHEEKEE.BLOG (BLOG_CATEGORY, BLOG_TITLE, BLOG_DESC, BLOG_DT, BLOG_REGISTER) VALUES ('${blogCategory}', '${blogTitle}', '${blogDesc}', now(), 'admin');
+    </select>
+
 
 
 </mapper>

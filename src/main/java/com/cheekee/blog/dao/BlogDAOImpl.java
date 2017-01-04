@@ -31,4 +31,9 @@ public class BlogDAOImpl implements BlogDAO{
         return sqlSession.selectOne("BlogMapper.selectBlogRetrieve", searchBlogIdx);
     }
 
+    @Override
+    public int insertBlog(BlogVO blogVO){
+        return sqlSession.insert("BlogMapper.insertBlog", blogVO);
+    }
+
 }

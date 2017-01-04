@@ -26,10 +26,14 @@ public class BlogServiceImpl implements BlogService {
     public List<String> selectBlogCategoryList(){
         return blogDAO.selectBlogCategoryList();
     }
-
     @Override
     public BlogVO selectBlogRetrieve(String searchBlogIdx){
         return blogDAO.selectBlogRetrieve(searchBlogIdx);
+    }
+
+    @Override
+    public int insertBlog(BlogVO blogVO){
+        return blogDAO.insertBlog(blogVO);
     }
 
 }
