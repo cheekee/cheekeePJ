@@ -24,9 +24,9 @@ public class BlogController {
     @RequestMapping(value="/blogList.do")
     public String blogList(Model model, @RequestParam("division") String division){
         List<String> blogCategoryList = blogService.selectBlogCategoryList(division);
-            // 카테고리 태그 리스트
-            model.addAttribute("blogCategoryList", blogCategoryList);
-            model.addAttribute("division", division);
+        // 카테고리 태그 리스트
+        model.addAttribute("blogCategoryList", blogCategoryList);
+        model.addAttribute("division", division);
         return "/blog/blogList";
     }
 

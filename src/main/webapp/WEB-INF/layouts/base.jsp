@@ -26,7 +26,6 @@
           <div id="nav-main-logo"><a href="<c:url value="/" />">CHEEKEE's PLACE</a></div>
           <ul>
               <li><a href="<c:url value="/geustbookList.do" />">GEUSTBOOK</a></li>
-              <li><a href="<c:url value="/labList.do" />">LAB</a></li>
               <li><a href="<c:url value="/blogList.do?division=idea" />">IDEA</a></li>
               <li><a href="<c:url value="/blogList.do?division=blog" />">BLOG</a></li>
               <c:choose>
@@ -41,9 +40,8 @@
       </nav>
       <section>
           <ul id="side-menu">
-              <li><a href="<c:url value="/blogList.do?division='blog'" />">BLOG</a></li>
-              <li><a href="<c:url value="/blogList.do?division='idea'" />">IDEA</a></li>
-              <li><a href="<c:url value="/labList.do" />">LAB</a></li>
+              <li><a href="<c:url value="/blogList.do?division=blog" />">BLOG</a></li>
+              <li><a href="<c:url value="/blogList.do?division=idea" />">IDEA</a></li>
               <li><a href="<c:url value="/geustbookList.do" />">GEUSTBOOK</a></li>
               <c:choose>
                   <c:when test="${not empty sessionScope.loginMember}">

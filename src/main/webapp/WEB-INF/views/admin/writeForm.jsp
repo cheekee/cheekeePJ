@@ -29,12 +29,36 @@
                 <div id="writeBtn">
                     글쓰기
                 </div>
-                <select name="division">
-                    <option value="blog">BLOG</option>
-                    <option value="idea">IDEA</option>
-                </select>
-                Category <input type="text" name="blogCategory"><br/>
-                Title<input type="text" name="blogTitle">
+                <table>
+                    <tr>
+                        <td>
+                            DIVISION :
+                        </td>
+                        <td>
+                            <select name="division">
+                                <option value="blog">BLOG</option>
+                                <option value="idea">IDEA</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            CATEGORY :
+                        </td>
+                        <td>
+                            <input type="text" name="blogCategory"><br/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            TITLE :
+                        </td>
+                        <td>
+                            <input type="text" name="blogTitle" style="width: 260px">
+                        </td>
+                    </tr>
+                </table>
+
                 <textarea id="MyID" name="blogDesc"></textarea>
 
             </form>
