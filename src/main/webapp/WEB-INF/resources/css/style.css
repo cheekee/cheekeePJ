@@ -108,7 +108,7 @@ nav ul li a:hover {
 }
 .section-main-container {
     float: left;
-    width: 90%;
+    width: 30%;
     height: 600px;
     margin-right: 5%;
 }
@@ -116,6 +116,7 @@ nav ul li a:hover {
     margin-right: 0;
 }
 .main-list-top {
+    font-family: 'Nanum Pen Script', serif;
     padding: 10px;
     margin-bottom: 10px;
     text-align: center;
@@ -214,6 +215,15 @@ footer a {
     text-decoration:none;
     font-size: 21px;
     color: white;
+}
+
+.blog-content {
+    width: 90%;
+    margin: 0 auto;
+}
+
+#blogRetrieveForm {
+    margin-bottom: 90px;
 }
 
 @media only screen and (max-width: 560px) {
