@@ -45,7 +45,6 @@ public class BlogController {
         blogVO.setPageNumber(pageNumber1);
         blogVO.setPageEndNumber(pageEndNumber1);
         blogVO.setDivision(division);
-        System.out.println(division+"DDDDD");
         List<BlogVO> blogList = blogService.selectBlogList(blogVO);
 
         return blogList;

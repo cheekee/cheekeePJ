@@ -3,12 +3,16 @@
 <%@ taglib uri="http://kwonnam.pe.kr/jsp/template-inheritance" prefix="layout"%>
 <layout:extends name="base">
     <layout:put block="import" type="REPLACE">
-        <%--<script src="/resources/js/marked.js"></script>--%>
+        <script src="/resources/js/marked.js"></script>
         <%--<script type="text/javascript" src="//simonwaldherr.github.io/micromarkdown.js/dist/micromarkdown.min.js"></script>--%>
     </layout:put>
     <layout:put block="contents" type="REPLACE">
-
             <div class="blog-content">
+                <c:choose>
+                    <c:when test="${not empty sessionScope.loginMember}">
+                        <div id="writeMenu"><div id="writeModify">글수정</div><div id="writeDelete">글삭제</div></div>
+                    </c:when>
+                </c:choose>
             <form action="/blogList.do" id="blogRetrieveForm">
             <div id="content"></div>
             <input type="hidden" id="someText" value="<c:out value="${blogResult.blogDesc}"/>">
@@ -22,7 +26,7 @@
         <script type="text/javascript">
             var someText = $('#someText').val();
             var blogDesc = someText.replace(/(\r\n|\n|\r)/gm,"\n");
-            // document.getElementById('content').innerHTML = marked(blogDesc);
+            document.getElementById('content').innerHTML = marked(blogDesc);
 
             // document.getElementById('content').innerHTML = micromarkdown.parse(blogDesc);
 

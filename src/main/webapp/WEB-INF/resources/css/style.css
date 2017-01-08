@@ -169,6 +169,7 @@ nav ul li a:hover {
     margin: 0 auto;
     width: 70%;
     height: 100%;
+    margin-bottom: 80px;
 }
 
 .section-content-item {
@@ -189,6 +190,32 @@ nav ul li a:hover {
 
 .blog-item-title {
     font-size: 30px;
+}
+
+#writeMenu {
+    margin: 0 auto;
+    width: 80px;
+}
+
+#writeModify {
+    margin-top: 10px;
+    text-align: center;
+    cursor: pointer;
+    background-color: #26519e;
+    width: 80px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+#writeDelete {
+    text-align: center;
+    cursor: pointer;
+    background-color: #26519e;
+    width: 80px;
+    padding-top: 3px;
+    padding-bottom: 3px;
 }
 
 footer {
@@ -218,7 +245,7 @@ footer a {
 }
 
 .blog-content {
-    width: 90%;
+    width:65%;
     margin: 0 auto;
 }
 
@@ -293,5 +320,8 @@ footer a {
     }
     .blog-item-title {
         font-size: 20px;
+    }
+    .blog-content {
+        width: 90%;
     }
 }
