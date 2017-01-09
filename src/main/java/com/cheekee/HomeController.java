@@ -90,4 +90,10 @@ public class HomeController {
         return "/index";
     }
 
+    @RequestMapping(value = "/contact.do")
+    public String contact() {
+
+        return "/admin/contact";
+    }
+
 }

@@ -25,7 +25,8 @@
           <!-- Navigation -->
           <div id="nav-main-logo"><a href="<c:url value="/" />">CHEEKEE's PLACE</a></div>
           <ul>
-              <li><a href="<c:url value="/geustbookList.do" />">GEUSTBOOK</a></li>
+              <%--<li><a href="<c:url value="/geustbookList.do" />">GEUSTBOOK</a></li>--%>
+              <li><a href="<c:url value="/contact.do" />">CONTACT</a></li>
               <li><a href="<c:url value="/blogList.do?division=idea" />">IDEA</a></li>
               <li><a href="<c:url value="/blogList.do?division=blog" />">BLOG</a></li>
               <c:choose>
@@ -42,7 +43,8 @@
           <ul id="side-menu">
               <li><a href="<c:url value="/blogList.do?division=blog" />">BLOG</a></li>
               <li><a href="<c:url value="/blogList.do?division=idea" />">IDEA</a></li>
-              <li><a href="<c:url value="/geustbookList.do" />">GEUSTBOOK</a></li>
+              <li><a href="<c:url value="/contact.do" />">CONTACT</a></li>
+              <%--<li><a href="<c:url value="/geustbookList.do" />">GEUSTBOOK</a></li>--%>
               <c:choose>
                   <c:when test="${not empty sessionScope.loginMember}">
                       <li><a href="<c:url value="/writeForm.do" />">WRITE</a></li>

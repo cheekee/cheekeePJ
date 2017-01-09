@@ -219,19 +219,11 @@ nav ul li a:hover {
 }
 
 #writeModify {
-    color: white;
-    margin-top: 10px;
-    text-align: center;
-    cursor: pointer;
-    background-color: #ff6e41;
-    width: 80px;
     margin-right: 10px;
-    margin-bottom: 10px;
-    padding-top: 3px;
-    padding-bottom: 3px;
 }
 
-#writeDelete {
+.btn {
+    margin-top: 10px;
     color: white;
     text-align: center;
     cursor: pointer;
@@ -282,6 +274,20 @@ footer a {
     width: 260px;
 }
 
+/* ------------------------------------ */
+/* ----- tablets in portrait mode ----- */
+/* ------------------------------------ */
+@media only screen and (min-width:560px) and (max-width:1003px){
+
+    .blog-content{
+        width: 85%;
+    }
+
+}
+
+/* ----------------------------------------- */
+/* ----- smartphones in landscape mode ----- */
+/* ----------------------------------------- */
 @media only screen and (max-width: 560px) {
     nav ul{
         display: none;
@@ -346,6 +352,7 @@ footer a {
     .section-content-item {
         width: 90%;
         box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
+        display: inline-table;
     }
     .blog-item-title {
         font-size: 20px;

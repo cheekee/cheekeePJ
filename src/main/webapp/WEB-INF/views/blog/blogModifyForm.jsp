@@ -12,7 +12,10 @@
         <div class="blog-content">
             <c:choose>
                 <c:when test="${not empty sessionScope.loginMember}">
-                    <div id="writeMenu"><div id="writeModify">수정</div><div id="writeDelete"><a style="color: white;" href="<c:url value="/blogRetrieve.do?searchBlogIdx=${blogResult.blogIdx}" />">취소</a></div></div>
+                    <div id="writeMenu">
+                        <div id="writeModify" class="btn">수정</div>
+                        <div id="writeDelete" class="btn"><a style="color: white;" href="<c:url value="/blogRetrieve.do?searchBlogIdx=${blogResult.blogIdx}" />">취소</a></div>
+                    </div>
                 </c:when>
             </c:choose>
             <form action="/blogModify.do" id="blogModifyForm">

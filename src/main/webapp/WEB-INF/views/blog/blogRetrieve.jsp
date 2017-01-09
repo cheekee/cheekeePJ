@@ -13,8 +13,9 @@
                 <c:choose>
                     <c:when test="${not empty sessionScope.loginMember}">
                         <div id="writeMenu">
-                            <div id="writeModify">글수정<input type='hidden' value="${blogResult.blogIdx}"></div>
-                            <div id="writeDelete">글삭제<input type='hidden' value="${blogResult.blogIdx}"></div>
+                            <div id="writeModify" class="btn">글수정<input type='hidden' value="${blogResult.blogIdx}"></div>
+                            <div id="writeDelete" class="btn">글삭제<input type='hidden' value="${blogResult.blogIdx}"></div>
+                            <div id="writeCancel" class="btn"><a style="color: white;" href="<c:url value="/blogList.do?division=${blogResult.division}" />">취소</a></div>
                         </div>
                     </c:when>
                 </c:choose>
