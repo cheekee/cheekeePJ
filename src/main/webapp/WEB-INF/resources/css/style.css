@@ -14,6 +14,25 @@ a {
     text-decoration: none;
     color: black;
 }
+
+/* 텍스트 지정 색깔 */
+::selection {
+    background: #ff6a3d;
+    color: #FFF;
+    text-shadow: none;
+}
+::-moz-selection {
+    background: #ff6a3d;
+    color: #FFF;
+    text-shadow: none;
+}
+::-webkit-selection {
+    background: #ff6a3d;
+    color: #FFF;
+    text-shadow: none;
+}
+
+
 nav {
     font-family: 'Nanum Pen Script', serif;
     background-color: #26519e;
