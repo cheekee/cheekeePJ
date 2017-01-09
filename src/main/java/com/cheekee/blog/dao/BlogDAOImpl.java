@@ -36,13 +36,13 @@ public class BlogDAOImpl implements BlogDAO{
     }
 
     @Override
-    public int insertBlog(BlogVO blogVO){
-        return sqlSession.insert("BlogMapper.insertBlog", blogVO);
+    public int insertPost(BlogVO blogVO){
+        return sqlSession.insert("BlogMapper.insertPost", blogVO);
     }
 
     @Override
-    public int insertIdea(BlogVO blogVO){
-        return sqlSession.insert("BlogMapper.insertIdea", blogVO);
+    public int updatePost(BlogVO blogVO){
+        return sqlSession.update("BlogMapper.updatePost", blogVO);
     }
 
 }

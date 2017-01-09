@@ -90,9 +90,4 @@ public class HomeController {
         return "/index";
     }
 
-    //
-    //
-    //
-    // url에 /writeForm.do 치고 들어오면 들어가짐............ 세션정보 없으면 팅겨내야함
-
 }

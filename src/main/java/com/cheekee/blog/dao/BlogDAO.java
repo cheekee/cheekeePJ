@@ -12,6 +12,6 @@ public interface BlogDAO {
     List<BlogVO> selectBlogList(BlogVO blogVO);
     List<String> selectBlogCategoryList(String division);
     BlogVO selectBlogRetrieve(String searchBlogIdx);
-    int insertBlog(BlogVO blogVO);
-    int insertIdea(BlogVO blogVO);
+    int insertPost(BlogVO blogVO);
+    int updatePost(BlogVO blogVO);
 }

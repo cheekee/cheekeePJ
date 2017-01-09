@@ -14,4 +14,5 @@ public interface BlogService {
     List<String> selectBlogCategoryList(String division);
     BlogVO selectBlogRetrieve(String searchBlogIdx);
     int insertPost(BlogVO blogVO);
+    int updatePost(BlogVO blogVO);
 }

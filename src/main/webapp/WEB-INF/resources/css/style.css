@@ -174,14 +174,16 @@ nav ul li a:hover {
     font-size: 18px;
     text-align: center;
     cursor: pointer;
-    background-color: #5686dc;
+    background-color: #ff6e41;
     margin: 3px 3px;
     border-radius: 3px;
+    color: white;
 }
 
 .blog-category:hover {
     color: white;
     font-size: 19px;
+    background-color: #FF563A;
 }
 
 #section-content-wrap {
@@ -217,10 +219,11 @@ nav ul li a:hover {
 }
 
 #writeModify {
+    color: white;
     margin-top: 10px;
     text-align: center;
     cursor: pointer;
-    background-color: #26519e;
+    background-color: #ff6e41;
     width: 80px;
     margin-right: 10px;
     margin-bottom: 10px;
@@ -229,9 +232,10 @@ nav ul li a:hover {
 }
 
 #writeDelete {
+    color: white;
     text-align: center;
     cursor: pointer;
-    background-color: #26519e;
+    background-color: #ff6e41;
     width: 80px;
     padding-top: 3px;
     padding-bottom: 3px;
@@ -250,6 +254,7 @@ footer {
     font-size: 19px;
     color: #cfdcf4;
     text-align: center;
+    z-index: 99;
 }
 
 #content {
@@ -266,10 +271,15 @@ footer a {
 .blog-content {
     width:65%;
     margin: 0 auto;
+    margin-bottom: 50px;
 }
 
 #blogRetrieveForm {
     margin-bottom: 90px;
+}
+
+.titleInput {
+    width: 260px;
 }
 
 @media only screen and (max-width: 560px) {
@@ -331,11 +341,11 @@ footer a {
     #section-content-wrap {
         margin: 0 auto;
         width: 90%;
+        margin-bottom: 80px;
     }
     .section-content-item {
         width: 90%;
         box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
-        padding: 20px;
     }
     .blog-item-title {
         font-size: 20px;
@@ -343,4 +353,8 @@ footer a {
     .blog-content {
         width: 90%;
     }
+    .titleInput {
+        width: 190px;
+    }
+
 }

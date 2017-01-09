@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /**
@@ -50,10 +51,39 @@ public class BlogController {
         return blogList;
     }
 
-    // 블로그 상세 조회 - 수정해야함
+    // 블로그 상세 조회
     @RequestMapping(value="/blogRetrieve.do")
     public String blogRetrieve(@RequestParam("searchBlogIdx") String searchBlogIdx, Model model){
         BlogVO blogResult = blogService.selectBlogRetrieve(searchBlogIdx);
+        model.addAttribute("blogResult", blogResult);
+        return "/blog/blogRetrieve";
+    }
+
+    // 블로그 상세 조회 - 수정해야함
+    @RequestMapping(value="/blogModifyForm.do")
+    public String blogModifyForm(HttpSession httpSession, @RequestParam("searchBlogIdx") String searchBlogIdx, Model model){
+        // 로그인세션 없을 때 메인으로 팅겨내기
+        Object loginMember = httpSession.getAttribute("loginMember");
+        if(loginMember == null){
+            return "/index";
+        }
+        BlogVO blogResult = blogService.selectBlogRetrieve(searchBlogIdx);
+        model.addAttribute("blogResult", blogResult);
+
+        return "/blog/blogModifyForm";
+    }
+
+    @RequestMapping(value = "/blogModify.do")
+    public String blogModify(HttpSession httpSession, @ModelAttribute("blogVO") BlogVO blogVO, Model model) {
+        // 로그인세션 없을 때 메인으로 팅겨내기
+        Object loginMember = httpSession.getAttribute("loginMember");
+        if(loginMember == null){
+            return "/index";
+        }
+        // blog, idea 입력
+        int resultCnt = blogService.updatePost(blogVO);
+
+        BlogVO blogResult = blogService.selectBlogRetrieve(blogVO.getBlogIdx());
         model.addAttribute("blogResult", blogResult);
         return "/blog/blogRetrieve";
     }

@@ -5,40 +5,25 @@
     <layout:put block="import" type="REPLACE">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
         <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
-        <style>
-            #writeBtn {
-                background-color: #26519e;
-                width: 100px;
-                height: 30px;
-                text-align: center;
-                margin: 0 auto;
-                margin-top: 10px;
-                margin-bottom: 10px;
-                vertical-align: middle;
-                font-size: 24px;
-                color: white;
-                cursor: pointer;
-            }
-            #writeFrom {
-                margin-bottom: 50px;
-            }
-        </style>
     </layout:put>
     <layout:put block="contents" type="REPLACE">
+    <section>
 
-        <section>
-
-            <form id="writeFrom" action="/write.do" method="post">
-                <div id="writeBtn">
-                    글쓰기
-                </div>
+        <div class="blog-content">
+            <c:choose>
+                <c:when test="${not empty sessionScope.loginMember}">
+                    <div id="writeMenu"><div id="writeModify">수정</div><div id="writeDelete">취소</div></div>
+                </c:when>
+            </c:choose>
+            <form action="/blogModify.do" id="blogModifyForm">
+                <div id="content"></div>
                 <table>
                     <tr>
                         <td>
                             DIVISION :
                         </td>
                         <td>
-                            <select name="division">
+                            <select name="division" id="divisionSelect">
                                 <option value="blog">BLOG</option>
                                 <option value="idea">IDEA</option>
                             </select>
@@ -49,7 +34,7 @@
                             CATEGORY :
                         </td>
                         <td>
-                            <input type="text" name="blogCategory"><br/>
+                            <input type="text" name="blogCategory" value="${blogResult.blogCategory}"><br/>
                         </td>
                     </tr>
                     <tr>
@@ -57,17 +42,18 @@
                             TITLE :
                         </td>
                         <td>
-                            <input type="text" name="blogTitle" class="titleInput">
+                            <input type="text" name="blogTitle" value="${blogResult.blogTitle}" class="titleInput">
                         </td>
                     </tr>
                 </table>
+                <input type="hidden" name="blogIdx" value="${blogResult.blogIdx}">
 
-                <textarea id="MyID" name="blogDesc"></textarea>
-
+                <textarea id="MyID" name="blogDesc">${blogResult.blogDesc}</textarea>
             </form>
+        </div>
+        <div id="blog-footer"></div>
 
-        </section>
-
+    </section>
     </layout:put>
     <layout:put block="scripts" type="REPLACE">
         <script type="text/javascript">
@@ -75,9 +61,19 @@
             var simplemde = new SimpleMDE({ element: document.getElementById("MyID") });
 
             $(document).ready(function(){
-               $('#writeBtn').click(function(){
-                    $('#writeFrom').submit();
-               }) ;
+
+                // division pre select
+                $('#divisionSelect option').each(function(){
+                    if($(this).val()=="${blogResult.division}"){
+                        $(this).attr("selected","selected"); // attr적용안될경우 prop으로
+                    }
+                });
+
+                // 블로그 수정 처리
+                $('#writeModify').click(function(){
+                    $('#blogModifyForm').submit();
+                }) ;
+
             });
 
         </script>

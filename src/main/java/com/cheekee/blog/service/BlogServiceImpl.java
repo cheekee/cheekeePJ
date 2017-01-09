@@ -33,14 +33,12 @@ public class BlogServiceImpl implements BlogService {
 
     @Override
     public int insertPost(BlogVO blogVO){
-        if (blogVO.getDivision().equals("blog")){
-            // blog 글 입력
-            return blogDAO.insertBlog(blogVO);
-        }else if(blogVO.getDivision().equals("idea")){
-            // idea 글 입력
-            return blogDAO.insertIdea(blogVO);
-        }
-        return 0;
+        return blogDAO.insertPost(blogVO);
+    }
+
+    @Override
+    public int updatePost(BlogVO blogVO){
+        return blogDAO.updatePost(blogVO);
     }
 
 }

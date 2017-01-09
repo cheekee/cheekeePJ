@@ -4,7 +4,6 @@
 <layout:extends name="base">
     <layout:put block="import" type="REPLACE">
         <script src="/resources/js/marked.js"></script>
-        <%--<script type="text/javascript" src="//simonwaldherr.github.io/micromarkdown.js/dist/micromarkdown.min.js"></script>--%>
         <link rel="stylesheet" href="//cdn.jsdelivr.net/highlight.js/8.7/styles/monokai_sublime.min.css">
         <script src="//cdn.jsdelivr.net/highlight.js/8.7/highlight.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script>
@@ -13,7 +12,10 @@
             <div class="blog-content">
                 <c:choose>
                     <c:when test="${not empty sessionScope.loginMember}">
-                        <div id="writeMenu"><div id="writeModify">글수정</div><div id="writeDelete">글삭제</div></div>
+                        <div id="writeMenu">
+                            <div id="writeModify">글수정<input type='hidden' value="${blogResult.blogIdx}"></div>
+                            <div id="writeDelete">글삭제</div>
+                        </div>
                     </c:when>
                 </c:choose>
             <form action="/blogList.do" id="blogRetrieveForm">
@@ -31,9 +33,17 @@
             var blogDesc = someText.replace(/(\r\n|\n|\r)/gm,"\n");
             document.getElementById('content').innerHTML = marked(blogDesc);
 
-            // document.getElementById('content').innerHTML = micromarkdown.parse(blogDesc);
+            // 블로그 수정 화면 버튼 클릭
+            $(document).on("click", "#writeModify", function(){
+                var searchBlogIdx = $(this).children("input").val();
+                blogModifyForm(searchBlogIdx);
+            });
 
-            // 1.코드 하이라이트 안되고, 2.와이드 줄이면 벗어남, 3. 긴글은 아래 하단 짤림
+            // 블로그 수정 화면 이동 함수
+            function blogModifyForm(searchBlogIdx){
+                var searchBlogIdx = searchBlogIdx;
+                location.href="<c:url value='/blogModifyForm.do?searchBlogIdx="+searchBlogIdx+"'/>"
+            }
 
         </script>
     </layout:put>

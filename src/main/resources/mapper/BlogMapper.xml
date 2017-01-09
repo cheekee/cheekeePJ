@@ -39,18 +39,16 @@
         SELECT * FROM CHEEKEE.BLOG WHERE BLOG_IDX = #{value};
     </select>
 
-    <select id="insertBlog"
+    <select id="insertPost"
             parameterType="com.cheekee.blog.domain.BlogVO"
             resultType="Integer">
         INSERT INTO CHEEKEE.BLOG (BLOG_CATEGORY, BLOG_TITLE, BLOG_DESC, BLOG_DT, BLOG_REGISTER, DIVISION) VALUES ('${blogCategory}', '${blogTitle}', '${blogDesc}', now(), 'admin', '${division}');
     </select>
 
-    <select id="insertIdea"
+    <select id="updatePost"
             parameterType="com.cheekee.blog.domain.BlogVO"
             resultType="Integer">
-        INSERT INTO CHEEKEE.BLOG (BLOG_CATEGORY, BLOG_TITLE, BLOG_DESC, BLOG_DT, BLOG_REGISTER, DIVISION) VALUES ('${blogCategory}', '${blogTitle}', '${blogDesc}', now(), 'admin', '${division}');
+        UPDATE CHEEKEE.BLOG SET BLOG_CATEGORY = '${blogCategory}', BLOG_TITLE = '${blogTitle}', BLOG_DESC = '${blogDesc}', BLOG_DT = now(), BLOG_REGISTER = 'admin', DIVISION = '${division}' WHERE BLOG_IDX = '${blogIdx}';
     </select>
-
-
 
 </mapper>
