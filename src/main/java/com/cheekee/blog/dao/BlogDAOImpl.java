@@ -45,4 +45,9 @@ public class BlogDAOImpl implements BlogDAO{
         return sqlSession.update("BlogMapper.updatePost", blogVO);
     }
 
+    @Override
+    public int deletePost(String searchBlogIdx){
+        return sqlSession.delete("BlogMapper.deletePost", searchBlogIdx);
+    }
+
 }

@@ -14,4 +14,5 @@ public interface BlogDAO {
     BlogVO selectBlogRetrieve(String searchBlogIdx);
     int insertPost(BlogVO blogVO);
     int updatePost(BlogVO blogVO);
+    int deletePost(String searchBlogIdx);
 }

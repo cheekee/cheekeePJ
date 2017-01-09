@@ -14,7 +14,7 @@
                     <c:when test="${not empty sessionScope.loginMember}">
                         <div id="writeMenu">
                             <div id="writeModify">글수정<input type='hidden' value="${blogResult.blogIdx}"></div>
-                            <div id="writeDelete">글삭제</div>
+                            <div id="writeDelete">글삭제<input type='hidden' value="${blogResult.blogIdx}"></div>
                         </div>
                     </c:when>
                 </c:choose>
@@ -37,6 +37,16 @@
             $(document).on("click", "#writeModify", function(){
                 var searchBlogIdx = $(this).children("input").val();
                 blogModifyForm(searchBlogIdx);
+            });
+
+            // 블로그 삭제
+            $(document).on("click", "#writeDelete", function(){
+                if (confirm("정말 삭제하시겠습니까??") == true){    //확인
+                    var searchBlogIdx = $(this).children("input").val();
+                    location.href="<c:url value='/blogDelete.do?searchBlogIdx="+searchBlogIdx+"'/>"
+                }else{   //취소
+                    return;
+                }
             });
 
             // 블로그 수정 화면 이동 함수

@@ -41,4 +41,9 @@ public class BlogServiceImpl implements BlogService {
         return blogDAO.updatePost(blogVO);
     }
 
+    @Override
+    public int deletePost(String searchBlogIdx){
+        return blogDAO.deletePost(searchBlogIdx);
+    }
+
 }

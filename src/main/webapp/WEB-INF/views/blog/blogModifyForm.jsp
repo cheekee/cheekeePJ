@@ -12,7 +12,7 @@
         <div class="blog-content">
             <c:choose>
                 <c:when test="${not empty sessionScope.loginMember}">
-                    <div id="writeMenu"><div id="writeModify">수정</div><div id="writeDelete">취소</div></div>
+                    <div id="writeMenu"><div id="writeModify">수정</div><div id="writeDelete"><a style="color: white;" href="<c:url value="/blogRetrieve.do?searchBlogIdx=${blogResult.blogIdx}" />">취소</a></div></div>
                 </c:when>
             </c:choose>
             <form action="/blogModify.do" id="blogModifyForm">
@@ -46,7 +46,7 @@
                         </td>
                     </tr>
                 </table>
-                <input type="hidden" name="blogIdx" value="${blogResult.blogIdx}">
+                <input type="hidden" name="blogIdx" id="blogIdx" value="${blogResult.blogIdx}">
 
                 <textarea id="MyID" name="blogDesc">${blogResult.blogDesc}</textarea>
             </form>

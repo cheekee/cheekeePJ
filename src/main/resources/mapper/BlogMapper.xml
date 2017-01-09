@@ -51,4 +51,10 @@
         UPDATE CHEEKEE.BLOG SET BLOG_CATEGORY = '${blogCategory}', BLOG_TITLE = '${blogTitle}', BLOG_DESC = '${blogDesc}', BLOG_DT = now(), BLOG_REGISTER = 'admin', DIVISION = '${division}' WHERE BLOG_IDX = '${blogIdx}';
     </select>
 
+    <select id="deletePost"
+            parameterType="java.lang.String"
+            resultType="Integer">
+        DELETE FROM CHEEKEE.BLOG WHERE BLOG_IDX = #{value};
+    </select>
+
 </mapper>

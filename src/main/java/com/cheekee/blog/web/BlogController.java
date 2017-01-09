@@ -88,4 +88,18 @@ public class BlogController {
         return "/blog/blogRetrieve";
     }
 
+    // 포스트 삭제
+    @RequestMapping(value = "/blogDelete.do")
+    public String blogDelete(HttpSession httpSession, @RequestParam("searchBlogIdx") String searchBlogIdx, Model model) {
+        // 로그인세션 없을 때 메인으로 팅겨내기
+        Object loginMember = httpSession.getAttribute("loginMember");
+        if(loginMember == null){
+            return "/index";
+        }
+        // blog, idea 입력
+        int resultCnt = blogService.deletePost(searchBlogIdx);
+
+        return "/blog/blogList";
+    }
+
 }
