@@ -5,6 +5,9 @@
     <layout:put block="import" type="REPLACE">
         <script src="/resources/js/marked.js"></script>
         <%--<script type="text/javascript" src="//simonwaldherr.github.io/micromarkdown.js/dist/micromarkdown.min.js"></script>--%>
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/highlight.js/8.7/styles/monokai_sublime.min.css">
+        <script src="//cdn.jsdelivr.net/highlight.js/8.7/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
     </layout:put>
     <layout:put block="contents" type="REPLACE">
             <div class="blog-content">
