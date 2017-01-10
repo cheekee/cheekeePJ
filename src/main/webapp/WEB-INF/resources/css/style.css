@@ -231,6 +231,12 @@ nav ul li a:hover {
     width: 80px;
     padding-top: 3px;
     padding-bottom: 3px;
+    font-size: 16px;
+}
+
+.btn:hover {
+    font-size: 17px;
+    background-color: #FF563A;
 }
 
 footer {

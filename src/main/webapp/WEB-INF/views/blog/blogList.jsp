@@ -22,8 +22,16 @@
     </layout:put>
     <layout:put block="scripts" type="REPLACE">
         <script type="text/javascript">
+
             $(document).ready(function(){
+
+                $(window).on('popstate',function(event){
+                    var state = event.originalEvent.state;
+                    console.log("popstate:", state );
+                });
+
                 ajaxBlogList();
+
                 $(document).scroll(function() {
                     if ($(window).scrollTop() == $(document).height() - $(window).height()) {
                         if(blogCount > pageNumber){
@@ -36,12 +44,14 @@
                         }
                     }
                 });
+
                 $('.blog-category').on("click", function(){
                     pageNumber = 0;
                     searchCategory = $(this).children('span').text();
                     $('#section-content-wrap').children().remove();
                     ajaxSearchBlogList(searchCategory);
                 });
+
                 // 블로그 상세보기 클릭
                 $(document).on("click", ".section-content-item", function(){
                     var searchBlogIdx = $(this).children("input").val();
@@ -97,11 +107,22 @@
                     }
                 });
             };
+
             // 블로그 상세조회
             function blogRetrieve(searchBlogIdx){
                 var searchBlogIdx = searchBlogIdx;
                 location.href="<c:url value='/blogRetrieve.do?searchBlogIdx="+searchBlogIdx+"'/>"
             }
+
+            if(typeof(history.pushState) == 'function')
+            {
+                var division = $('#division').val();
+                var renewURL = location.href;
+                var state = { 'division' : division, 'searchCategory' : searchCategory};
+                renewURL = renewURL.replace(/\&page=([0-9]+)/ig,'');
+                history.pushState(state, null, renewURL);
+            }
+
         </script>
     </layout:put>
 </layout:extends>

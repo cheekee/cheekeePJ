@@ -7,17 +7,9 @@
         <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
         <style>
             #writeBtn {
-                background-color: #26519e;
-                width: 100px;
-                height: 30px;
-                text-align: center;
                 margin: 0 auto;
                 margin-top: 10px;
                 margin-bottom: 10px;
-                vertical-align: middle;
-                font-size: 24px;
-                color: white;
-                cursor: pointer;
             }
             #writeFrom {
                 margin-bottom: 50px;
@@ -29,7 +21,7 @@
         <section>
 
             <form id="writeFrom" action="/write.do" method="post">
-                <div id="writeBtn">
+                <div id="writeBtn" class="btn">
                     글쓰기
                 </div>
                 <table>
