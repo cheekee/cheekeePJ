@@ -120,16 +120,16 @@ nav ul li a:hover {
     padding: 0 auto;
 }
 #section-main {
-    width: 90%;
+    width: 80%;
     height: 650px;
     margin:0 auto;
     margin-top: 30px;
 }
 .section-main-container {
     float: left;
-    width: 30%;
-    height: 600px;
-    margin-right: 5%;
+    width: 45%;
+    height: auto;
+    margin-right: 10%;
 }
 .section-main-container:last-child {
     margin-right: 0;
@@ -144,7 +144,9 @@ nav ul li a:hover {
     color: white;
 }
 .main-list-top:hover {
+
 }
+
 .main-list-row {
     box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     padding: 10px;
@@ -154,6 +156,8 @@ nav ul li a:hover {
     transform: scale(1.1,1.1);
     transition : all 0.5s ease;
     cursor: pointer;
+    background-color: #597dbd;
+    color: white;
 }
 .mainh4 {
     margin-top: 0px;
@@ -169,21 +173,22 @@ nav ul li a:hover {
 
 .blog-category {
     width: 85px;
-    height: 25px;
+    height: 28px;
     float: left;
     font-size: 18px;
     text-align: center;
     cursor: pointer;
-    background-color: #ff6e41;
+    background-color: white;
     margin: 3px 3px;
     border-radius: 3px;
-    color: white;
+    color: black;
+    padding-top: 4px;
 }
 
 .blog-category:hover {
-    color: white;
     font-size: 19px;
-    background-color: #FF563A;
+    background-color: #597dbd;
+    color: white;
 }
 
 #section-content-wrap {
@@ -207,6 +212,8 @@ nav ul li a:hover {
     transform: scale(1.1,1.1);
     transition : all 0.5s ease;
     cursor: pointer;
+    background-color: #597dbd;
+    color: white;
 }
 
 .blog-item-title {
@@ -342,6 +349,7 @@ footer a {
     .section-main-container {
         clear: both;
         width: 90%;
+        margin-bottom: 30px;
     }
     .blog-category-wrap {
         width: 90%;
@@ -353,7 +361,8 @@ footer a {
     #section-content-wrap {
         margin: 0 auto;
         width: 90%;
-        margin-bottom: 80px;
+        height: auto;
+        margin-bottom: 140px;
     }
     .section-content-item {
         width: 90%;
@@ -364,7 +373,7 @@ footer a {
         font-size: 20px;
     }
     .blog-content {
-        width: 90%;
+        width: 100%;
     }
     .titleInput {
         width: 190px;

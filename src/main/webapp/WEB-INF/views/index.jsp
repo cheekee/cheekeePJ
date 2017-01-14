@@ -10,108 +10,95 @@
             <div id="section-main-wrap">
             <div class="section-main-container">
                 <div class="main-list-top">
-                    BLOG
+                    B L O G
                 </div>
-                <div class="main-list-wrap">
-                    <div class="main-list-row">
-                        <span>BLOG  |  2016-02-01</span>
-                        <h4 class="mainh4">Jolokia 사용법 소개Jolokia 사용법 소개Jolokia 사용법 소개</h4>
-                    </div>
-                    <div class="main-list-row">
-                        <span>BLOG  |  2016-02-01</span>
-                        <h4 class="mainh4">Jolokia 사용법 소개</h4>
-                    </div>
-                    <div class="main-list-row">
-                        <span>BLOG  |  2016-02-01</span>
-                        <h4 class="mainh4">Jolokia 사용법 소개Jolokia 사용법 소개Jolokia 사용법 소개</h4>
-                    </div>
-                    <div class="main-list-row">
-                        <span>BLOG  |  2016-02-01</span>
-                        <h4 class="mainh4">Jolokia 사용법 소개</h4>
-                    </div>
-                    <div class="main-list-row">
-                        <span>BLOG  |  2016-02-01</span>
-                        <h4 class="mainh4">Jolokia 사용법 소개Jolokia 사용법 소개Jolokia 사용법 소개</h4>
-                    </div>
-                    <div class="main-list-row">
-                        <span>BLOG  |  2016-02-01</span>
-                        <h4 class="mainh4">Jolokia 사용법 소개Jolokia 사용법 소개Jolokia 사용법 소개</h4>
-                    </div>
+                <div class="main-list-wrap" id="blog">
                 </div>
             </div>
             <div class="section-main-container">
                 <div class="main-list-top">
-                    IDEA
+                    I D E A
                 </div>
-                <div class="main-list-wrap">
-                    <div class="main-list-row">
-                        <span>IDEA  |  2016-02-01</span>
-                        <h4 class="mainh4">개발 일지</h4>
-                    </div>
-                    <div class="main-list-row">
-                        <span>IDEA  |  2016-02-01</span>
-                        <h4 class="mainh4">최순실게이트</h4>
-                    </div>
-                    <div class="main-list-row">
-                        <span>IDEA  |  2016-02-01</span>
-                        <h4 class="mainh4">개발 일지</h4>
-                    </div>
-                    <div class="main-list-row">
-                        <span>IDEA  |  2016-02-01</span>
-                        <h4 class="mainh4">최순실게이트</h4>
-                    </div>
-                    <div class="main-list-row">
-                        <span>IDEA  |  2016-02-01</span>
-                        <h4 class="mainh4">최순실게이트</h4>
-                    </div>
-                    <div class="main-list-row">
-                        <span>IDEA  |  2016-02-01</span>
-                        <h4 class="mainh4">개발 일지</h4>
-                    </div>
-                    <div class="main-list-row">
-                        <span>IDEA  |  2016-02-01</span>
-                        <h4 class="mainh4">최순실게이트</h4>
-                    </div>
-                </div>
-            </div>
-            <div class="section-main-container">
-                <div class="main-list-top">
-                    LAB
-                </div>
-                <div class="main-list-wrap">
-                    <div class="main-list-row">
-                        <span>LAB  |  2016-02-01</span>
-                        <h4 class="mainh4">socket.io chatting test</h4>
-                    </div>
-                    <div class="main-list-row">
-                        <span>LAB  |  2016-02-01</span>
-                        <h4 class="mainh4">bastball-game</h4>
-                    </div>
-                    <div class="main-list-row">
-                        <span>LAB  |  2016-02-01</span>
-                        <h4 class="mainh4">socket.io chatting test</h4>
-                    </div>
-                    <div class="main-list-row">
-                        <span>LAB  |  2016-02-01</span>
-                        <h4 class="mainh4">bastball-game</h4>
-                    </div>
-                    <div class="main-list-row">
-                        <span>LAB  |  2016-02-01</span>
-                        <h4 class="mainh4">socket.io chatting test</h4>
-                    </div>
-                    <div class="main-list-row">
-                        <span>LAB  |  2016-02-01</span>
-                        <h4 class="mainh4">socket.io chatting test</h4>
-                    </div>
-                    <div class="main-list-row">
-                        <span>LAB  |  2016-02-01</span>
-                        <h4 class="mainh4">bastball-game</h4>
-                    </div>
+                <div class="main-list-wrap" id="idea">
                 </div>
             </div>
             </div>
         </div>
     </section>
 
+    </layout:put>
+    <layout:put block="scripts" type="REPLACE">
+        <script type="text/javascript">
+
+            // 리스트 쿼리 - 시작숫자
+            var pageNumber = 0;
+            // 리스트 쿼리 - 끝숫자
+            var pageEndNumber = 5;
+            var division = "";
+
+            // 블로그 리스트 불러오기 (blog)
+            function ajaxBlogList1(){
+                division = "blog";
+                $.ajax({
+                    url : "<c:url value='/ajaxBlogList.do'/>",
+                    type : 'get', // get, post
+                    data : {"pageNumber":pageNumber, "pageEndNumber":pageEndNumber, "division":division}, // form을 통채로 넘길때, {'name':'홍길동', 'age':'20'}
+                    dataType : 'json', //text, json, html, xml, script
+                    success : function(data) {
+                        $(data).each(function(index, item) {
+                            var html = "<div class='main-list-row'><span>"+item.division+" | "+item.blogDt+"</span><h4 class='main4'>"+item.blogTitle+"</h4><input type='hidden' value="+item.blogIdx+"></div>"
+                            $('#blog').append(html);
+                        });
+                    },
+                    error : function() {
+                        alert("실패");
+                    }
+                });
+            };
+
+            // 블로그 리스트 불러오기 (idea)
+            function ajaxBlogList2(){
+                division = "idea";
+                $.ajax({
+                    url : "<c:url value='/ajaxBlogList.do'/>",
+                    type : 'get', // get, post
+                    data : {"pageNumber":pageNumber, "pageEndNumber":pageEndNumber, "division":division}, // form을 통채로 넘길때, {'name':'홍길동', 'age':'20'}
+                    dataType : 'json', //text, json, html, xml, script
+                    success : function(data) {
+                        $(data).each(function(index, item) {
+                            var html = "<div class='main-list-row'><span>"+item.division+" | "+item.blogDt+"</span><h4 class='main4'>"+item.blogTitle+"</h4><input type='hidden' value="+item.blogIdx+"></div>"
+                            $('#idea').append(html);
+                        });
+                    },
+                    error : function() {
+                        alert("실패");
+                    }
+                });
+            };
+
+
+            $(document).ready(function () {
+                ajaxBlogList1();
+                ajaxBlogList2();
+            });
+
+            // 블로그 상세보기 클릭
+            $(document).on("click", ".main-list-row", function(){
+                var searchBlogIdx = $(this).children("input").val();
+                blogRetrieve(searchBlogIdx);
+            });
+
+            $(document).on("vclick", ".main-list-row", function(){
+                var searchBlogIdx = $(this).children("input").val();
+                blogRetrieve(searchBlogIdx);
+            });
+
+            // 블로그 상세조회
+            function blogRetrieve(searchBlogIdx){
+                var searchBlogIdx = searchBlogIdx;
+                location.href="<c:url value='/blogRetrieve.do?searchBlogIdx="+searchBlogIdx+"'/>"
+            }
+
+        </script>
     </layout:put>
 </layout:extends>

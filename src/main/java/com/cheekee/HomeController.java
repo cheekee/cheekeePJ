@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.util.HttpSessionMutexListener;
 
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 /**
  * Created by songhangyu on 2016-11-04.
@@ -29,7 +30,7 @@ public class HomeController {
     private BlogService blogService;
 
     @RequestMapping(value = "/")
-    public String home() {
+    public String home(Model model) {
 
         return "/index";
     }

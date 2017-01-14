@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by songhangyu on 2016-11-07.
@@ -40,7 +41,7 @@ public class BlogController {
         BlogVO blogVO = new BlogVO();
         int pageNumber1 = Integer.parseInt(pageNumber);
         int pageEndNumber1 = Integer.parseInt(pageEndNumber);
-        if(searchCategory != ""){
+        if(searchCategory != "" || searchCategory != null){
             blogVO.setSearchCategory(searchCategory);
         }
         blogVO.setPageNumber(pageNumber1);

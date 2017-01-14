@@ -4,7 +4,7 @@
     <select id="loginCheck"
             parameterType="com.cheekee.member.domain.MemberVO"
             resultType="com.cheekee.member.domain.MemberVO">
-        SELECT * FROM CHEEKEE.MEMBER WHERE MEMBER_ID = '${memberId}' AND MEMBER_PW = '${memberPw}'
+        SELECT * FROM cheekee.member WHERE MEMBER_ID = '${memberId}' AND MEMBER_PW = '${memberPw}'
     </select>
 
 </mapper>

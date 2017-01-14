@@ -4,22 +4,39 @@
 <layout:extends name="base">
     <layout:put block="import" type="REPLACE">
         <style>
+
             .contantDiv {
                 margin: 0 auto;
                 width: 90%;
                 text-align: center;
                 margin-bottom: 50px;
+                color: white;
             }
+            #contactSection {
+                width: 100%;
+                background-image: url(/resources/image/computer.jpg);
+                background-position: center;
+                background-size: cover;
+                height: 635px;
+                opacity: 0.8;
+            }
+            a {
+                color: white;
+            }
+            a:hover {
+                color: #fc754f;
+            }
+
         </style>
     </layout:put>
     <layout:put block="contents" type="REPLACE">
 
-        <section>
+        <section id="contactSection">
 
-            <div class="contantDiv"><h3>NickName</h3> <span>Cheekee</span></div>
-            <div class="contantDiv"><h3>Email</h3> <a href="mailto:songcheekee@gmail.com">songcheekee@gmail.com</a></div>
-            <div class="contantDiv"><h3>Github</h3> <a href="https://github.com/cheekee"><span>https://github.com/cheekee</span></a></div>
-            <div class="contantDiv"><h3>SNS</h3> <span>...</span></div>
+            <div class="contantDiv"><h2>NickName</h2> <span>Cheekee</span></div>
+            <div class="contantDiv"><h2>Email</h2> <a href="mailto:songcheekee@gmail.com">songcheekee@gmail.com</a></div>
+            <div class="contantDiv"><h2>Github</h2> <a href="https://github.com/cheekee"><span>https://github.com/cheekee</span></a></div>
+            <div class="contantDiv"><h2>SNS</h2> <span>...</span></div>
 
         </section>
 

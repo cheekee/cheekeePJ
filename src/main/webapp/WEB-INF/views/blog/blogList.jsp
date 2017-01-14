@@ -57,6 +57,12 @@
                     var searchBlogIdx = $(this).children("input").val();
                     blogRetrieve(searchBlogIdx);
                 });
+
+                $(document).on("vclick", ".section-content-item", function(){
+                    var searchBlogIdx = $(this).children("input").val();
+                    blogRetrieve(searchBlogIdx);
+                });
+
             });
             // 리스트 쿼리 - 시작숫자
             var pageNumber = 0;

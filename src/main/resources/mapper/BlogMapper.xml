@@ -4,11 +4,11 @@
     <select id="selectBlogList"
             parameterType="com.cheekee.blog.domain.BlogVO"
             resultType="com.cheekee.blog.domain.BlogVO">
-        SELECT (SELECT COUNT(*) FROM CHEEKEE.BLOG
+        SELECT (SELECT COUNT(*) FROM cheekee.blog
         <if test="searchCategory != null">
             WHERE BLOG_CATEGORY = '${searchCategory}'
         </if>
-        ) AS BLOG_COUNT, BLOG_DT, BLOG_TITLE, BLOG_CATEGORY, BLOG_IDX FROM CHEEKEE.BLOG
+        ) AS BLOG_COUNT, BLOG_DT, BLOG_TITLE, BLOG_CATEGORY, BLOG_IDX, DIVISION FROM cheekee.blog
         <if test='division == "blog"'>
             WHERE DIVISION = 'blog'
         </if>
@@ -24,7 +24,7 @@
     <select id="selectBlogCategoryList"
             parameterType="com.cheekee.blog.domain.BlogVO"
             resultType="java.lang.String">
-        SELECT distinct BLOG_CATEGORY FROM CHEEKEE.BLOG
+        SELECT distinct BLOG_CATEGORY FROM cheekee.blog
         <if test='division == "blog"'>
             WHERE DIVISION = 'blog'
         </if>
@@ -36,25 +36,25 @@
     <select id="selectBlogRetrieve"
             parameterType="java.lang.String"
             resultType="com.cheekee.blog.domain.BlogVO">
-        SELECT * FROM CHEEKEE.BLOG WHERE BLOG_IDX = #{value};
+        SELECT * FROM cheekee.blog WHERE BLOG_IDX = #{value};
     </select>
 
     <select id="insertPost"
             parameterType="com.cheekee.blog.domain.BlogVO"
             resultType="Integer">
-        INSERT INTO CHEEKEE.BLOG (BLOG_CATEGORY, BLOG_TITLE, BLOG_DESC, BLOG_DT, BLOG_REGISTER, DIVISION) VALUES ('${blogCategory}', '${blogTitle}', '${blogDesc}', now(), 'admin', '${division}');
+        INSERT INTO cheekee.blog (BLOG_CATEGORY, BLOG_TITLE, BLOG_DESC, BLOG_DT, BLOG_REGISTER, DIVISION) VALUES ('${blogCategory}', '${blogTitle}', '${blogDesc}', now(), 'admin', '${division}');
     </select>
 
     <select id="updatePost"
             parameterType="com.cheekee.blog.domain.BlogVO"
             resultType="Integer">
-        UPDATE CHEEKEE.BLOG SET BLOG_CATEGORY = '${blogCategory}', BLOG_TITLE = '${blogTitle}', BLOG_DESC = '${blogDesc}', BLOG_DT = now(), BLOG_REGISTER = 'admin', DIVISION = '${division}' WHERE BLOG_IDX = '${blogIdx}';
+        UPDATE cheekee.blog SET BLOG_CATEGORY = '${blogCategory}', BLOG_TITLE = '${blogTitle}', BLOG_DESC = '${blogDesc}', BLOG_DT = now(), BLOG_REGISTER = 'admin', DIVISION = '${division}' WHERE BLOG_IDX = '${blogIdx}';
     </select>
 
     <select id="deletePost"
             parameterType="java.lang.String"
             resultType="Integer">
-        DELETE FROM CHEEKEE.BLOG WHERE BLOG_IDX = #{value};
+        DELETE FROM cheekee.blog WHERE BLOG_IDX = #{value};
     </select>
 
 </mapper>
