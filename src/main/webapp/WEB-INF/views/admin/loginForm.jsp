@@ -3,6 +3,7 @@
 <%@ taglib uri="http://kwonnam.pe.kr/jsp/template-inheritance" prefix="layout"%>
 <layout:extends name="base">
     <layout:put block="import" type="REPLACE">
+        <meta name="description" content="cheekee 로그인 화면입니다.">
         <style>
 
             input[type=text], input[type=password] {

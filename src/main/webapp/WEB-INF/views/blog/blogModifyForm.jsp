@@ -3,6 +3,7 @@
 <%@ taglib uri="http://kwonnam.pe.kr/jsp/template-inheritance" prefix="layout"%>
 <layout:extends name="base">
     <layout:put block="import" type="REPLACE">
+        <meta name="description" content="블로그, 아이디어 수정 화면입니다.">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
         <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
     </layout:put>

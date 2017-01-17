@@ -3,6 +3,7 @@
 <%@ taglib uri="http://kwonnam.pe.kr/jsp/template-inheritance" prefix="layout"%>
 <layout:extends name="base">
     <layout:put block="import" type="REPLACE">
+        <meta name="description" content="cheekee를 소개하는 화면입니다.">
         <style>
 
             .contantDiv {

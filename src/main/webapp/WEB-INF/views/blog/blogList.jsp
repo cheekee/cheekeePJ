@@ -2,6 +2,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="http://kwonnam.pe.kr/jsp/template-inheritance" prefix="layout"%>
 <layout:extends name="base">
+    <layout:put block="import" type="REPLACE">
+        <meta name="description" content="블로그, 아이디어 리스트 화면입니다.">
+    </layout:put>
     <layout:put block="contents" type="REPLACE">
 
         <section>

@@ -3,6 +3,7 @@
 <%@ taglib uri="http://kwonnam.pe.kr/jsp/template-inheritance" prefix="layout"%>
 <layout:extends name="base">
     <layout:put block="import" type="REPLACE">
+        <meta name="description" content="블로그, 아이디어 조회 화면입니다.">
         <script src="/resources/js/marked.js"></script>
         <link rel="stylesheet" href="//cdn.jsdelivr.net/highlight.js/8.7/styles/monokai_sublime.min.css">
         <script src="//cdn.jsdelivr.net/highlight.js/8.7/highlight.min.js"></script>
@@ -29,10 +30,21 @@
                     </c:when>
                 </c:choose>
             <form action="/blogList.do" id="blogRetrieveForm">
-            <div id="content"></div>
+            <div id="content">
+            </div>
             <input type="hidden" id="someText" value="<c:out value="${blogResult.blogDesc}"/>">
             <input type="hidden" name="searchCategory" value="<c:out value="${searchCategory}"/>">
             </form>
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- cheekee -->
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-8056199978184432"
+                     data-ad-slot="4447675504"
+                     data-ad-format="auto"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
             </div>
         <div id="backBtn"><i class="fa fa-arrow-left fa-2x" aria-hidden="true"></i></div>
         <div id="disqus_thread"></div>
