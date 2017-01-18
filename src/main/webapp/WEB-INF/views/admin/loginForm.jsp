@@ -96,6 +96,12 @@
                 });
             });
 
+            $("#memberId").bind("keyup",function(){
+                re = /[~!@\#$%^&*\()\-=+_'"]/gi;
+                var temp=$("#memberId").val();
+                if(re.test(temp)){ //특수문자가 포함되면 삭제하여 값으로 다시셋팅
+                    $("#memberId").val(temp.replace(re,"")); } });
+
         </script>
     </layout:put>
 </layout:extends>
