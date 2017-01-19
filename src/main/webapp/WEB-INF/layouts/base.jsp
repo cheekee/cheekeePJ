@@ -12,6 +12,7 @@
 <script src="http://u1.linnk.it/qc8sbw/usr/apps/textsync/upload/jquery-mobile-touch.value.js " ></script>
 <link rel="stylesheet" type="text/css" href="/resources/css/style.css">
 <link href="https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css" rel="stylesheet">
+<meta name="google-site-verification" content="jCuWO-3ArJ4jNuyFUewyrlBcCp2fYbEsBqVrWj9HLV4" />
 <layout:block name="import">
 </layout:block>
 <!--[if lt IE 9]>
