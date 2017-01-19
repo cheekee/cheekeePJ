@@ -4,11 +4,11 @@
     <select id="selectBlogList"
             parameterType="com.cheekee.blog.domain.BlogVO"
             resultType="com.cheekee.blog.domain.BlogVO">
-        SELECT (SELECT COUNT(*) FROM cheekee.blog
+        SELECT (SELECT COUNT(*) FROM cheekee.blog WHERE  DIVISION = '${division}'
         <if test="searchCategory != null">
-            WHERE BLOG_CATEGORY = '${searchCategory}'
+            AND BLOG_CATEGORY = '${searchCategory}'
         </if>
-        ) AS BLOG_COUNT, DATE_FORMAT(BLOG_DT, '%Y-%m-%d') AS BLOG_DT, BLOG_TITLE, BLOG_CATEGORY, BLOG_IDX, DIVISION FROM cheekee.blog
+        ) AS BLOG_COUNT, BLOG_DT AS BLOG_DT_TIME, DATE_FORMAT(BLOG_DT, '%Y-%m-%d') AS BLOG_DT, BLOG_TITLE, BLOG_CATEGORY, BLOG_IDX, DIVISION FROM cheekee.blog
         <if test='division == "blog"'>
             WHERE DIVISION = 'blog'
         </if>
@@ -18,7 +18,7 @@
         <if test="searchCategory != null">
             AND BLOG_CATEGORY = '${searchCategory}'
         </if>
-        ORDER BY BLOG_DT desc LIMIT ${pageNumber}, ${pageEndNumber}
+        ORDER BY BLOG_DT_TIME desc LIMIT ${pageNumber}, ${pageEndNumber}
     </select>
 
     <select id="selectBlogCategoryList"
