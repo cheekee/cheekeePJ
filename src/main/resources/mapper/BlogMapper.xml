@@ -8,7 +8,7 @@
         <if test="searchCategory != null">
             WHERE BLOG_CATEGORY = '${searchCategory}'
         </if>
-        ) AS BLOG_COUNT, BLOG_DT, BLOG_TITLE, BLOG_CATEGORY, BLOG_IDX, DIVISION FROM cheekee.blog
+        ) AS BLOG_COUNT, DATE_FORMAT(BLOG_DT, '%Y-%m-%d') AS BLOG_DT, BLOG_TITLE, BLOG_CATEGORY, BLOG_IDX, DIVISION FROM cheekee.blog
         <if test='division == "blog"'>
             WHERE DIVISION = 'blog'
         </if>
