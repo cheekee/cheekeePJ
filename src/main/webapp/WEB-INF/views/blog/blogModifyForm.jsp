@@ -19,7 +19,7 @@
                     </div>
                 </c:when>
             </c:choose>
-            <form action="/blogModify.do" id="blogModifyForm">
+            <form action="/blogModify.do" id="blogModifyForm" method="post">
                 <div id="content"></div>
                 <table>
                     <tr>

@@ -5,10 +5,7 @@ import com.cheekee.blog.service.BlogService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 import java.util.List;
@@ -74,7 +71,8 @@ public class BlogController {
         return "/blog/blogModifyForm";
     }
 
-    @RequestMapping(value = "/blogModify.do")
+    // 포스트 수정
+    @RequestMapping(value = "/blogModify.do", method= RequestMethod.POST)
     public String blogModify(HttpSession httpSession, @ModelAttribute("blogVO") BlogVO blogVO, Model model) {
         // 로그인세션 없을 때 메인으로 팅겨내기
         Object loginMember = httpSession.getAttribute("loginMember");

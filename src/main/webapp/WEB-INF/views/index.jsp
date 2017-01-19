@@ -4,6 +4,13 @@
 <layout:extends name="base">
     <layout:put block="import" type="REPLACE">
         <title>치키의 개발 블로그</title>
+        <style>
+            #adv {
+                width: 16%;
+                float: left;
+                height: auto;
+            }
+        </style>
     </layout:put>
     <layout:put block="contents" type="REPLACE">
     <section>
@@ -22,6 +29,20 @@
                     I D E A
                 </div>
                 <div class="main-list-wrap" id="idea">
+                </div>
+            </div>
+            <div class="section-main-container" id="adv">
+                <div>
+                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <!-- index right -->
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-8056199978184432"
+                         data-ad-slot="4300754700"
+                         data-ad-format="auto"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
                 </div>
             </div>
             </div>

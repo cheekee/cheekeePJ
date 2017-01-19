@@ -127,9 +127,9 @@ nav ul li a:hover {
 }
 .section-main-container {
     float: left;
-    width: 45%;
+    width: 35%;
     height: auto;
-    margin-right: 10%;
+    margin-right: 7%;
 }
 .section-main-container:last-child {
     margin-right: 0;
@@ -295,6 +295,9 @@ footer a {
     .blog-content{
         width: 85%;
     }
+    .section-main-container {
+        margin-right: 5%;
+    }
 
 }
 
@@ -378,5 +381,7 @@ footer a {
     .titleInput {
         width: 190px;
     }
-
+    #adv{
+        display: none;
+    }
 }
