@@ -36,15 +36,15 @@
             <input type="hidden" name="searchCategory" value="<c:out value="${searchCategory}"/>">
             </form>
                 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                <!-- cheekee -->
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-8056199978184432"
-                     data-ad-slot="4447675504"
-                     data-ad-format="auto"></ins>
-                <script>
-                    (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
+<!-- 으덜덜1 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8056199978184432"
+     data-ad-slot="7622651103"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
             </div>
         <div id="backBtn"><i class="fa fa-arrow-left fa-2x" aria-hidden="true"></i></div>
         <div id="disqus_thread"></div>
