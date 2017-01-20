@@ -57,4 +57,9 @@
         DELETE FROM cheekee.blog WHERE BLOG_IDX = #{value};
     </select>
 
+    <select id="selectPostTitle"
+            resultType="com.cheekee.blog.domain.BlogVO">
+        SELECT BLOG_IDX, BLOG_TITLE FROM cheekee.blog;
+    </select>
+
 </mapper>

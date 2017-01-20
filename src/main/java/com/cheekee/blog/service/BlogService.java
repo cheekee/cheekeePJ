@@ -16,4 +16,5 @@ public interface BlogService {
     int insertPost(BlogVO blogVO);
     int updatePost(BlogVO blogVO);
     int deletePost(String searchBlogIdx);
+    List<BlogVO> selectPostTitle();
 }

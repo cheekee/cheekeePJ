@@ -109,8 +109,25 @@ nav ul li a:hover {
     margin-top: 0px;
     color: white;
 }
+#searchDiv {
+    height: 100px;
+    margin-bottom: 0px;
+    vertical-align: middle;
+    text-align: center;
+    margin-top: 0px;
+    color: white;
+    font-size: 20px;
+}
+#myTitle {
+    width: 224px;
+    height: 16px;
+    background-color: transparent;
+    color: white;
+    font-family: inherit;
+    font-size: 21px;
+}
 #section-top-main h3 {
-    line-height: 100px;
+    line-height: 70px;
     vertical-align: middle;
     text-align: center;
     font-size: 24px;

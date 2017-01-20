@@ -101,4 +101,13 @@ public class BlogController {
         return "/blog/blogList";
     }
 
+    // 포스트 타이틀을 가져오자!
+    @RequestMapping(value = "/ajaxSearchTitle.do")
+    @ResponseBody
+    public List<BlogVO> ajaxSearchTitle(Model model){
+        List<BlogVO> blogList = blogService.selectPostTitle();
+
+        return blogList;
+    }
+
 }

@@ -26,11 +26,11 @@ public class BlogServiceImpl implements BlogService {
     public List<String> selectBlogCategoryList(String division){
         return blogDAO.selectBlogCategoryList(division);
     }
+
     @Override
     public BlogVO selectBlogRetrieve(String searchBlogIdx){
         return blogDAO.selectBlogRetrieve(searchBlogIdx);
     }
-
     @Override
     public int insertPost(BlogVO blogVO){
         return blogDAO.insertPost(blogVO);
@@ -44,6 +44,11 @@ public class BlogServiceImpl implements BlogService {
     @Override
     public int deletePost(String searchBlogIdx){
         return blogDAO.deletePost(searchBlogIdx);
+    }
+
+    @Override
+    public List<BlogVO> selectPostTitle(){
+        return blogDAO.selectPostTitle();
     }
 
 }

@@ -9,6 +9,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <script src="//code.jquery.com/jquery.min.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
 <script src="http://u1.linnk.it/qc8sbw/usr/apps/textsync/upload/jquery-mobile-touch.value.js " ></script>
 <link rel="stylesheet" type="text/css" href="/resources/css/style.css">
 <link href="https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css" rel="stylesheet">
@@ -60,6 +62,7 @@
               <div id="section-top-main">
                   <h1>CHEEKEE's PLACE에 오신것을 환영합니다</h1>
                   <h3>한 개발자의 일상을 담은 사이트입니다</h3>
+                  <div id="searchDiv"><input id='myTitle' type='text'><span>      해당글보기</span></div>
               </div>
           </div>
       </section>
@@ -83,10 +86,41 @@
 <layout:block name="default-script">
 <script type="text/javascript">
     $(document).ready(function(){
+
+        ajaxSearchTitle();
+
         $('#menubar').click(function(){
             $('#side-menu').toggle("slow");
         });
+
     });
+
+    var postTitle = [];
+
+    // 검색 자동 완성을 위한 post title 데이터 가져오자!
+    function ajaxSearchTitle(){
+        $.ajax({
+            url : "<c:url value='/ajaxSearchTitle.do'/>",
+            type : 'get', // get, post
+            data : {}, // form을 통채로 넘길때, {'name':'홍길동', 'age':'20'}
+            dataType : 'json', //text, json, html, xml, script
+            success : function(data) {
+                $(data).each(function(index, item) {
+                    postTitle.push(item.blogTitle);
+                });
+            },
+            error : function() {
+                alert("실패");
+            }
+        });
+    };
+    $(function() {
+
+        $( "#myTitle" ).autocomplete({
+            source: postTitle
+        });
+    });
+
 </script>
 </layout:block>
 </body>

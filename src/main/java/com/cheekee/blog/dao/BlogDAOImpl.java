@@ -22,7 +22,6 @@ public class BlogDAOImpl implements BlogDAO{
     public List<BlogVO> selectBlogList(BlogVO blogVO){
         return sqlSession.selectList("BlogMapper.selectBlogList", blogVO);
     }
-
     @Override
     public List<String> selectBlogCategoryList(String division){
         BlogVO blogVO = new BlogVO();
@@ -48,6 +47,11 @@ public class BlogDAOImpl implements BlogDAO{
     @Override
     public int deletePost(String searchBlogIdx){
         return sqlSession.delete("BlogMapper.deletePost", searchBlogIdx);
+    }
+
+    @Override
+    public List<BlogVO> selectPostTitle(){
+        return sqlSession.selectList("BlogMapper.selectPostTitle");
     }
 
 }
