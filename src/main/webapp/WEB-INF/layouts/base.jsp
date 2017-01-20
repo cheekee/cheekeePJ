@@ -87,7 +87,7 @@
             $('#side-menu').toggle("slow");
         });
     });
-</script> 
+</script>
 </layout:block>
 </body>
 </html>

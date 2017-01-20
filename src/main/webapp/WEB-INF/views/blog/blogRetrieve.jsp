@@ -16,6 +16,9 @@
                 color: #26519e;
                 cursor: pointer;
             }
+            a {
+                color: #f9724d;
+            }
         </style>
     </layout:put>
     <layout:put block="contents" type="REPLACE">
@@ -30,6 +33,16 @@
                     </c:when>
                 </c:choose>
             <form action="/blogList.do" id="blogRetrieveForm">
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- content top -->
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-8056199978184432"
+                     data-ad-slot="5151705905"
+                     data-ad-format="auto"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
             <div id="content">
             </div>
             <input type="hidden" id="someText" value="<c:out value="${blogResult.blogDesc}"/>">
