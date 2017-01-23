@@ -119,12 +119,19 @@ nav ul li a:hover {
     font-size: 20px;
 }
 #myTitle {
-    width: 224px;
-    height: 16px;
+    width: 450px;
+    height: 20px;
     background-color: transparent;
     color: white;
     font-family: inherit;
-    font-size: 21px;
+    font-size: 23px;
+}
+#searchBtn {
+    font-size: 20px;
+    cursor: pointer;
+}
+#searchBtn:hover{
+    color: #e56846;
 }
 #section-top-main h3 {
     line-height: 70px;
@@ -132,6 +139,7 @@ nav ul li a:hover {
     text-align: center;
     font-size: 24px;
     color: white;
+    margin-bottom: 0px;
 }
 #section-main-wrap {
     padding: 0 auto;

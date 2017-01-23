@@ -62,7 +62,7 @@
               <div id="section-top-main">
                   <h1>CHEEKEE's PLACE에 오신것을 환영합니다</h1>
                   <h3>한 개발자의 일상을 담은 사이트입니다</h3>
-                  <div id="searchDiv"><input id='myTitle' type='text'><span>      해당글보기</span></div>
+                  <div id="searchDiv"><input id='myTitle' type='text'><span id="searchBtn">      해당글보기</span></div>
               </div>
           </div>
       </section>
@@ -86,11 +86,27 @@
 <layout:block name="default-script">
 <script type="text/javascript">
     $(document).ready(function(){
-
+        $('#myTitle').val('');
         ajaxSearchTitle();
 
         $('#menubar').click(function(){
             $('#side-menu').toggle("slow");
+        });
+
+        $('#searchBtn').click(function(){
+            var searchValue = $.trim($(this).prev('input').val());
+            if(searchValue == ''){
+                alert("포스팅 제목을 선택하세요!");
+                $('#myTitle').val('');
+            }else{
+                if(postTitle.indexOf(searchValue) != -1){
+                    var searchIndexPre = $.inArray(searchValue, postTitle) -1;
+                    var searchIndex = postTitle[searchIndexPre];
+                    blogRetrieve(searchIndex);
+                }else{
+                    alert("포스팅 제목을 선택하세요!");
+                }
+            }
         });
 
     });
@@ -106,6 +122,7 @@
             dataType : 'json', //text, json, html, xml, script
             success : function(data) {
                 $(data).each(function(index, item) {
+                    postTitle.push(item.blogIdx);
                     postTitle.push(item.blogTitle);
                 });
             },
@@ -120,6 +137,10 @@
             source: postTitle
         });
     });
+    function blogRetrieve(searchBlogIdx){
+        var searchBlogIdx = searchBlogIdx;
+        location.href="<c:url value='/blogRetrieve.do?searchBlogIdx="+searchBlogIdx+"'/>"
+    }
 
 </script>
 </layout:block>
