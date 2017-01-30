@@ -19,7 +19,6 @@
                 background-position: center;
                 background-size: cover;
                 height: 635px;
-                opacity: 0.8;
             }
             a {
                 color: white;

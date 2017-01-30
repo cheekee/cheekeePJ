@@ -48,7 +48,7 @@
     <select id="updatePost"
             parameterType="com.cheekee.blog.domain.BlogVO"
             resultType="Integer">
-        UPDATE cheekee.blog SET BLOG_CATEGORY = '${blogCategory}', BLOG_TITLE = '${blogTitle}', BLOG_DESC = '${blogDesc}', BLOG_DT = now(), BLOG_REGISTER = 'admin', DIVISION = '${division}' WHERE BLOG_IDX = '${blogIdx}';
+        UPDATE cheekee.blog SET BLOG_CATEGORY = '${blogCategory}', BLOG_TITLE = '${blogTitle}', BLOG_DESC = '${blogDesc}', BLOG_REGISTER = 'admin', DIVISION = '${division}' WHERE BLOG_IDX = '${blogIdx}';
     </select>
 
     <select id="deletePost"

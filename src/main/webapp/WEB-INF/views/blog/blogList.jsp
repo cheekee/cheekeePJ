@@ -86,7 +86,7 @@
                     dataType : 'json', //text, json, html, xml, script
                     success : function(data) {
                         $(data).each(function(index, item) {
-                            var html = "<div class='section-content-item'>"+item.blogDt+" | "+item.blogCategory+"<br><span class='blog-item-title'>"+item.blogTitle+"</span><input type='hidden' value="+item.blogIdx+"></div>"
+                            var html = "<div class='section-content-item'>"+item.blogCategory+"  |  "+item.blogDt+"<br><br><span class='blog-item-title'>"+item.blogTitle+"</span><input type='hidden' value="+item.blogIdx+"></div>"
                             $('#section-content-wrap').append(html);
                             blogCount = item.blogCount;
                         });
@@ -106,7 +106,7 @@
                     dataType : 'json', //text, json, html, xml, script
                     success : function(data) {
                         $(data).each(function(index, item) {
-                            var html = "<div class='section-content-item'>"+item.blogDt+" | "+item.blogCategory+"<br><span class='blog-item-title'>"+item.blogTitle+"</span><input type='hidden' value="+item.blogIdx+"></div>"
+                            var html = "<div class='section-content-item'>"+item.blogCategory+"  |  "+item.blogDt+"<br><br><span class='blog-item-title'>"+item.blogTitle+"</span><input type='hidden' value="+item.blogIdx+"></div>"
                             $('#section-content-wrap').append(html);
                             blogCount = item.blogCount;
                         });

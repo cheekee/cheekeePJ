@@ -69,7 +69,7 @@
                     dataType : 'json', //text, json, html, xml, script
                     success : function(data) {
                         $(data).each(function(index, item) {
-                            var html = "<div class='main-list-row'><span>"+item.division+" | "+item.blogDt+"</span><h4 class='main4'>"+item.blogTitle+"</h4><input type='hidden' value="+item.blogIdx+"></div>"
+                            var html = "<div class='main-list-row'><span>"+item.blogCategory+"  |  "+item.blogDt+"</span><h4 class='main4'>"+item.blogTitle+"</h4><input type='hidden' value="+item.blogIdx+"></div>"
                             $('#blog').append(html);
                         });
                     },
@@ -89,7 +89,7 @@
                     dataType : 'json', //text, json, html, xml, script
                     success : function(data) {
                         $(data).each(function(index, item) {
-                            var html = "<div class='main-list-row'><span>"+item.division+" | "+item.blogDt+"</span><h4 class='main4'>"+item.blogTitle+"</h4><input type='hidden' value="+item.blogIdx+"></div>"
+                            var html = "<div class='main-list-row'><span>"+item.blogCategory+"  |  "+item.blogDt+"</span><h4 class='main4'>"+item.blogTitle+"</h4><input type='hidden' value="+item.blogIdx+"></div>"
                             $('#idea').append(html);
                         });
                     },
