@@ -20,8 +20,8 @@
                 color: #f9724d;
             }
             img{
-                width: 70%;
-                margin: 0 15%;
+                display: block;
+                margin: 0 auto;
             }
         </style>
     </layout:put>

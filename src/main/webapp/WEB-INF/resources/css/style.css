@@ -414,4 +414,8 @@ footer a {
     #myTitle {
         width: 200px;
     }
+    #content img{
+        width: 80%;
+        margin: 0 10%;
+    }
 }
