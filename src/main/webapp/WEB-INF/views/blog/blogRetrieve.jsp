@@ -19,6 +19,10 @@
             a {
                 color: #f9724d;
             }
+            p > img{
+                width: 30%;
+                margin: 0 35%;
+            }
         </style>
     </layout:put>
     <layout:put block="contents" type="REPLACE">
