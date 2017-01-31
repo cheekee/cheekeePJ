@@ -19,9 +19,9 @@
             a {
                 color: #f9724d;
             }
-            p > img{
-                width: 30%;
-                margin: 0 35%;
+            img{
+                width: 70%;
+                margin: 0 15%;
             }
         </style>
     </layout:put>
