@@ -34,11 +34,11 @@
             <div class="section-main-container" id="adv">
                 <div>
                     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                    <!-- index right -->
+                    <!-- main -->
                     <ins class="adsbygoogle"
                          style="display:block"
                          data-ad-client="ca-pub-8056199978184432"
-                         data-ad-slot="4300754700"
+                         data-ad-slot="6938419504"
                          data-ad-format="auto"></ins>
                     <script>
                         (adsbygoogle = window.adsbygoogle || []).push({});
